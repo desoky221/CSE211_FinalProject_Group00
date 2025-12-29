@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="EduConnect homepage featuring event highlights and quick search and filter options."
+    />
+    <meta
+      name="keywords"
+      content="EduConnect, education, events, workshops, seminars, student activities, registration"
+    />
+    <meta name="author" content="Your Full Name" />
+    <title>Home - EduConnect</title>
+  </head>
+
+  <body>
+    <!-- ========== HEADER SECTION ========== -->
+    <header>
+      <div>
+        <a href="index.html" title="Go to EduConnect Home">
+          <img src="assets/logo.png" alt="EduConnect logo" width="120" height="120" />
+        </a>
+        <h1>EduConnect</h1>
+        <p>Your gateway to campus learning experiences and student events.</p>
+      </div>
+
+      <!-- ========== MAIN NAVIGATION ========== -->
+      <nav id="main-navigation" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" title="Home">Home</a></li>
+          <li><a href="about.html" title="About EduConnect">About Us</a></li>
+          <li><a href="course-catalog.html" title="Browse course catalog">Course Catalog</a></li>
+          <li><a href="student-dashboard.html" title="Open student dashboard">Student Dashboard</a></li>
+          <li><a href="registration.html" title="Register for an event">Registration</a></li>
+          <li><a href="contact.html" title="Contact us">Contact Me</a></li>
+          <li>
+            <a
+              href="https://www.exampleuniversity.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit University Website"
+              >University Name</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- ========== END MAIN NAVIGATION ========== -->
+    </header>
+    <!-- ========== END HEADER ========= -->
+
+    <!-- ========== MAIN SECTION ========== -->
+    <main>
+      <header>
+        <h2>Featured Events & Quick Access</h2>
+      </header>
+
+      <!-- Two-column layout without CSS:
+           Left column is the primary content sections; right column is an aside for filters/search -->
+      <section aria-label="Homepage content columns">
+        <!-- ========== LEFT COLUMN: EVENT LISTINGS ========== -->
+        <section aria-label="Event listings">
+          <h3>Upcoming Highlights</h3>
+
+          <!-- Unordered list requirement -->
+          <ul>
+            <li>Workshops: Hands-on skill-building sessions</li>
+            <li>Seminars: Talks by faculty and guest speakers</li>
+            <li>Networking: Meet students and professionals</li>
+          </ul>
+
+          <article>
+            <h4>Web Design Sprint</h4>
+            <p>
+              Learn semantic HTML and accessibility basics in a fast-paced workshop.
+              Date:
+              <time datetime="2026-01-10">January 10, 2026</time>
+            </p>
+
+            <!-- Embedded media (image) -->
+            <figure>
+              <img
+                src="assets/event-1.jpg"
+                alt="Students collaborating on laptops during a workshop"
+                width="640"
+                height="360"
+              />
+              <figcaption>Students collaborating during our design sprint.</figcaption>
+            </figure>
+
+            <!-- Ordered list requirement -->
+            <ol>
+              <li>Bring your laptop and charger.</li>
+              <li>Arrive 15 minutes early for check-in.</li>
+              <li>Join a team and start building.</li>
+            </ol>
+
+            <p>
+              Want more details? Visit the
+              <a href="events.html" title="See full events table">events table</a>.
+            </p>
+          </article>
+
+          <article>
+            <h4>Career Prep Seminar</h4>
+            <p>
+              CV tips, interview practice, and networking.
+              Date:
+              <time datetime="2026-02-05">February 5, 2026</time>
+            </p>
+
+            <!-- Embedded media (video) -->
+            <figure>
+              <video controls width="640" title="Career Prep Promo Video">
+                <source src="assets/promo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>A short promo video for our career seminar.</figcaption>
+            </figure>
+          </article>
+
+          <!-- Definition list requirement -->
+          <section aria-label="Event terminology">
+            <h3>Event Terms</h3>
+            <dl>
+              <dt>Workshop</dt>
+              <dd>A practical session focused on doing and building.</dd>
+              <dt>Seminar</dt>
+              <dd>A talk or lecture followed by Q&amp;A.</dd>
+              <dt>Networking</dt>
+              <dd>Connecting with people for learning and opportunities.</dd>
+            </dl>
+          </section>
+        </section>
+        <!-- ========== END LEFT COLUMN ========== -->
+
+        <!-- ========== RIGHT COLUMN: SEARCH / FILTER OPTIONS ========== -->
+        <aside aria-label="Search and filter options">
+          <h3>Search &amp; Filter</h3>
+
+          <form action="events.html" method="get">
+            <fieldset>
+              <legend>Find an event</legend>
+
+              <p>
+                <label for="q">Keyword</label><br />
+                <input
+                  type="search"
+                  id="q"
+                  name="q"
+                  placeholder="e.g., design, career"
+                  title="Search events by keyword"
+                />
+              </p>
+
+              <p>
+                <label for="type">Event Type</label><br />
+                <select id="type" name="type" title="Filter by event type">
+                  <option value="">Any</option>
+                  <option value="workshop">Workshop</option>
+                  <option value="seminar">Seminar</option>
+                  <option value="networking">Networking</option>
+                </select>
+              </p>
+
+              <p>
+                <label for="maxCost">Max Cost</label><br />
+                <input
+                  type="number"
+                  id="maxCost"
+                  name="maxCost"
+                  min="0"
+                  step="1"
+                  placeholder="0"
+                  title="Filter by maximum cost"
+                />
+              </p>
+
+              <p>
+                <button type="submit" title="Apply filters">Apply</button>
+                <button type="reset" title="Reset filters">Reset</button>
+              </p>
+            </fieldset>
+          </form>
+
+          <section aria-label="Quick links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="registration.html" title="Go to registration form">Register now</a></li>
+              <li><a href="budget-calculator.html" title="Estimate your event budget">Budget calculator</a></li>
+              <li><a href="contact.html" title="Contact details">Contact</a></li>
+            </ul>
+          </section>
+        </aside>
+        <!-- ========== END RIGHT COLUMN ========== -->
+      </section>
+    </main>
+    <!-- ========== END MAIN SECTION ========== -->
+
+    <!-- ========== FOOTER SECTION ========== -->
+    <footer>
+      <div class="footer-content">
+        <section aria-label="Footer links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="about.html" title="About EduConnect">About Us</a></li>
+            <li><a href="contact.html" title="Contact page">Contact</a></li>
+            <li><a href="privacy.html" title="Privacy policy placeholder">Privacy Policy</a></li>
+            <li><a href="terms.html" title="Terms of service placeholder">Terms of Service</a></li>
+          </ul>
+        </section>
+
+        <section aria-label="Footer contact">
+          <h4>Contact</h4>
+          <address>
+            Email:
+            <a href="mailto:contact@educonnect.example" title="Send us an email"
+              >contact@educonnect.example</a
+            >
+          </address>
+        </section>
+
+        <section aria-label="Footer social media">
+          <h4>Social</h4>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener" title="LinkedIn"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener" title="Facebook"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank" rel="noopener" title="Twitter"
+                >Twitter</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section aria-label="Footer copyright">
+        <p>(c) 2025 EduConnect. All rights reserved.</p>
+        <p>
+          Last Updated:
+          <time datetime="2025-12-29" title="Last updated date">December 29, 2025</time>
+        </p>
+      </section>
+    </footer>
+    <!-- ========== END FOOTER ========= -->
+  </body>
+</html>
