@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Event registration form for EduConnect. Submit details and get redirected to a thank you page."
+    />
+    <meta
+      name="keywords"
+      content="EduConnect, registration, event signup, student form, workshop registration"
+    />
+    <meta name="author" content="Your Full Name" />
+    <title>Registration - EduConnect</title>
+  </head>
+
+  <body>
+    <!-- ========== HEADER SECTION ========== -->
+    <header>
+      <div>
+        <a href="index.html" title="Go to EduConnect Home">
+          <img src="assets/logo.png" alt="EduConnect logo" width="120" height="120" />
+        </a>
+        <h1>EduConnect</h1>
+      </div>
+
+      <nav id="main-navigation" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" title="Home">Home</a></li>
+          <li><a href="about.html" title="About EduConnect">About Us</a></li>
+          <li><a href="course-catalog.html" title="Browse course catalog">Course Catalog</a></li>
+          <li><a href="student-dashboard.html" title="Open student dashboard">Student Dashboard</a></li>
+          <li><a href="registration.html" title="Register for an event">Registration</a></li>
+          <li><a href="contact.html" title="Contact us">Contact Me</a></li>
+          <li>
+            <a
+              href="https://www.exampleuniversity.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit University Website"
+              >University Name</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- ========== END HEADER ========= -->
+
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html" title="Home">Home</a> &gt; <span>Registration</span>
+    </nav>
+
+    <!-- ========== MAIN SECTION ========== -->
+    <main>
+      <header>
+        <h2>Event Registration</h2>
+        <p>Please fill out the form below to reserve your spot.</p>
+      </header>
+
+      <section aria-label="Registration form">
+        <!-- Redirecting to thank-you.html as required -->
+        <form action="thank-you.html" method="get">
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <p>
+              <label for="fullName">Full Name</label><br />
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                required
+                placeholder="e.g., Ahmed Ali"
+                title="Enter your full name"
+              />
+            </p>
+
+            <p>
+              <label for="email">Email</label><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="name@example.com"
+                title="Enter your email address"
+              />
+            </p>
+
+            <p>
+              <label for="phone">Phone</label><br />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+20..."
+                title="Enter your phone number"
+              />
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Event Selection</legend>
+
+            <p>
+              <label for="eventName">Choose Event</label><br />
+              <select id="eventName" name="eventName" required title="Select an event">
+                <option value="">Select one...</option>
+                <option value="web-design-sprint">Web Design Sprint</option>
+                <option value="career-prep-seminar">Career Prep Seminar</option>
+                <option value="research-poster-day">Research Poster Day</option>
+                <option value="networking-night">Networking Night</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="attendanceMode">Attendance Mode</label><br />
+              <select id="attendanceMode" name="attendanceMode" title="Choose attendance mode">
+                <option value="in-person">In-person</option>
+                <option value="online">Online</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="notes">Notes</label><br />
+              <textarea
+                id="notes"
+                name="notes"
+                rows="4"
+                cols="40"
+                placeholder="Any special requirements?"
+                title="Optional notes"
+              ></textarea>
+            </p>
+          </fieldset>
+
+          <section aria-label="Consent and submit">
+            <h3>Before you submit</h3>
+
+            <!-- Unordered list (another place it fits) -->
+            <ul>
+              <li>Make sure your email is correct.</li>
+              <li>Check the selected event date in the events table.</li>
+              <li>Use the budget calculator if you expect extra costs.</li>
+            </ul>
+
+            <p>
+              <input type="checkbox" id="agree" name="agree" required />
+              <label for="agree">I confirm my details are correct.</label>
+            </p>
+
+            <p>
+              <button type="submit" title="Submit registration">Submit</button>
+              <button type="reset" title="Clear form">Clear</button>
+            </p>
+          </section>
+        </form>
+      </section>
+    </main>
+    <!-- ========== END MAIN SECTION ========== -->
+
+    <!-- ========== FOOTER SECTION ========== -->
+    <footer>
+      <div class="footer-content">
+        <section aria-label="Footer links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="about.html" title="About EduConnect">About Us</a></li>
+            <li><a href="contact.html" title="Contact page">Contact</a></li>
+            <li><a href="privacy.html" title="Privacy policy placeholder">Privacy Policy</a></li>
+            <li><a href="terms.html" title="Terms of service placeholder">Terms of Service</a></li>
+          </ul>
+        </section>
+
+        <section aria-label="Footer contact">
+          <h4>Contact</h4>
+          <address>
+            Email:
+            <a href="mailto:contact@educonnect.example" title="Send us an email"
+              >contact@educonnect.example</a
+            >
+          </address>
+        </section>
+
+        <section aria-label="Footer social media">
+          <h4>Social</h4>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener" title="LinkedIn"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener" title="Facebook"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank" rel="noopener" title="Twitter"
+                >Twitter</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <section aria-label="Footer copyright">
+        <p>(c) 2025 EduConnect. All rights reserved.</p>
+        <p>
+          Last Updated:
+          <time datetime="2025-12-29" title="Last updated date">December 29, 2025</time>
+        </p>
+      </section>
+    </footer>
+    <!-- ========== END FOOTER ========= -->
+  </body>
+</html>
