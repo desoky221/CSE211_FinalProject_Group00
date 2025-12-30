@@ -1,16 +1,14 @@
-
-section[aria-label="Homepage content columns"] {
+.content-columns {
   display: flex;
   gap: 2.5rem;             
   margin-top: 2rem;        
 }
 
-
-section[aria-label="Event listings"] {
+.event-listings {
   flex: 7;
 }
 
-aside[aria-label="Search and filter options"] {
+.search-filter-sidebar {
   flex: 3;
   background: var(--white);
   padding: 1.5625rem;
@@ -19,23 +17,23 @@ aside[aria-label="Search and filter options"] {
   align-self: flex-start;
 }
 
-section[aria-label="Event listings"] article {
+.event-listings article {
   border-left: 6px solid var(--secondary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-section[aria-label="Event listings"] article:hover {
+.event-listings article:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 992px) {
-  section[aria-label="Homepage content columns"] {
+  .content-columns {
     flex-direction: column;
   }
   
-  aside[aria-label="Search and filter options"] {
-    order: -1; 
+  .search-filter-sidebar {
+    order: -1; /* Puts search bar on top for mobile users */
     width: 100%;
   }
 }

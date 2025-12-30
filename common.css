@@ -145,7 +145,6 @@ body > header img {
   margin: 0 auto;
 }
 
-/* Headers inside main content should NOT have blue background */
 main header {
   background: none;
   padding: 0;
@@ -178,7 +177,6 @@ main header h2 {
   color: yellow;
 }
 
-/* --- 5. Breadcrumb Navigation --- */
 .breadcrumb {
   padding: 1rem 2rem;
   background-color: #e2e8f0;
@@ -199,7 +197,6 @@ main header h2 {
   color: var(--text-color);
 }
 
-/* --- 6. Forms --- */
 form {
   margin-top: 1.5rem;
 }
@@ -231,6 +228,7 @@ input[type="email"],
 input[type="tel"],
 input[type="search"],
 input[type="number"],
+
 select,
 textarea {
   width: 100%;
@@ -297,7 +295,6 @@ input[type="checkbox"] {
   margin-right: 0.5rem;
 }
 
-/* --- 7. Tables --- */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -340,7 +337,6 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* --- 8. Sections & Articles --- */
 section {
   margin-bottom: 2.5rem;
 }
@@ -361,12 +357,10 @@ aside {
   margin-bottom: 2rem;
 }
 
-/* Address styling */
 address {
   font-style: normal;
 }
 
-/* --- 9. Footer --- */
 footer {
   background-color: var(--footer-bg);
   color: #cbd5e1; /* Light gray text for dark bg */
@@ -388,7 +382,7 @@ footer {
 
 .footer-content section {
   flex: 1;
-  min-width: 200px; /* Ensures columns don't get too thin */
+  min-width: 200px; 
 }
 
 .footer-content h4 {
@@ -418,8 +412,7 @@ footer {
   padding-left: 0.3125rem;
 }
 
-/* Bottom Copyright Bar */
-section[aria-label="Footer copyright"] {
+.footer-copyright {
   text-align: center;
   margin-top: 2rem;
   font-size: 0.85rem;
