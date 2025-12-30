@@ -1,0 +1,43 @@
+
+section[aria-label="Homepage content columns"] {
+  display: flex;
+  gap: 2.5rem;             
+  margin-top: 2rem;        
+}
+
+
+section[aria-label="Event listings"] {
+  flex: 7;
+}
+
+aside[aria-label="Search and filter options"] {
+  flex: 3;
+  background: var(--white);
+  padding: 1.5625rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+}
+
+section[aria-label="Event listings"] article {
+  border-left: 6px solid var(--secondary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section[aria-label="Event listings"] article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  section[aria-label="Homepage content columns"] {
+    flex-direction: column;
+  }
+  
+  aside[aria-label="Search and filter options"] {
+    order: -1; 
+    width: 100%;
+  }
+}
+
+
