@@ -12,6 +12,8 @@
       content="EduConnect, education, events, workshops, seminars, student activities, registration"
     >
     <meta name="author" content="Your Full Name">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="index.css">
     <title>Home - EduConnect</title>
   </head>
 
@@ -39,15 +41,15 @@
       </div>
 
       <!-- ========== MAIN NAVIGATION ========== -->
-      <nav id="mainNavigation" class="navBar" aria-label="Primary Navigation">
-        <ul id="navList" class="navListBox">
-          <li class="navItem"><a href="index.html" id="navHome" class="navLink">Home</a></li>
-          <li class="navItem"><a href="about.html" id="navAbout" class="navLink">About Us</a></li>
-          <li class="navItem"><a href="course-catalog.html" id="navCourses" class="navLink">Course Catalog</a></li>
-          <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink">Student Dashboard</a></li>
-          <li class="navItem"><a href="registration.html" id="navRegister" class="navLink">Registration</a></li>
-          <li class="navItem"><a href="contact.html" id="navContact" class="navLink">Contact Me</a></li>
-          <li class="navItem">
+      <nav id="main-navigation" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" title="Home">Home</a></li>
+          <li><a href="about.html" title="About EduConnect">About Us</a></li>
+          <li><a href="course-catalog.html" title="Browse course catalog">Course Catalog</a></li>
+          <li><a href="student-dashboard.html" title="Open student dashboard">Student Dashboard</a></li>
+          <li><a href="registration.html" title="Register for an event">Registration</a></li>
+          <li><a href="contact.html" title="Contact us">Contact Me</a></li>
+          <li>
             <a
               href="https://www.exampleuniversity.edu"
               id="navUniversity"
@@ -69,12 +71,12 @@
         </h2>
       </header>
 
-      <section id="contentLayout" class="contentLayout">
-        <h2 class="visuallyHidden">Main Content Layout</h2>
-
-        <!-- LEFT COLUMN -->
-        <section id="eventsSection" class="eventsBox" aria-label="Event listings">
-          <h3 id="eventsTitle" class="sectionTitle">Upcoming Highlights</h3>
+      <!-- Two-column layout without CSS:
+           Left column is the primary content sections; right column is an aside for filters/search -->
+      <section class="content-columns" aria-label="Homepage content columns">
+        <!-- ========== LEFT COLUMN: EVENT LISTINGS ========== -->
+        <section class="event-listings" aria-label="Event listings">
+          <h3>Upcoming Highlights</h3>
 
           <ul id="highlightsList" class="simpleList">
             <li>Workshops: Hands-on skill-building sessions</li>
@@ -121,8 +123,9 @@
             </figure>
           </article>
 
-          <section id="termsSection" class="termsBox">
-            <h3 class="sectionTitle">Event Terms</h3>
+          <!-- Definition list requirement -->
+          <section aria-label="Event terminology">
+            <h3>Event Terms</h3>
             <dl>
               <dt>Workshop</dt>
               <dd>Hands-on practical session.</dd>
@@ -134,9 +137,9 @@
           </section>
         </section>
 
-        <!-- RIGHT COLUMN -->
-        <aside id="filterSection" class="filterBox" aria-label="Search and filter options">
-          <h3 class="sectionTitle">Search &amp; Filter</h3>
+        <!-- ========== RIGHT COLUMN: SEARCH / FILTER OPTIONS ========== -->
+        <aside class="search-filter-sidebar" aria-label="Search and filter options">
+          <h3>Search &amp; Filter</h3>
 
           <form action="events.html" id="filterForm">
             <fieldset>
@@ -160,15 +163,24 @@
               <button type="reset" id="resetBtn">Reset</button>
             </fieldset>
           </form>
+
+          <section aria-label="Quick links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="registration.html" title="Go to registration form">Register now</a></li>
+              <li><a href="budget-calculator.html" title="Estimate your event budget">Budget calculator</a></li>
+              <li><a href="contact.html" title="Contact details">Contact</a></li>
+            </ul>
+          </section>
         </aside>
       </section>
     </main>
     <!-- ========== END MAIN SECTION ========== -->
 
     <!-- ========== FOOTER SECTION ========== -->
-    <footer id="siteFooter" class="footerBox">
-      <div id="footerContent" class="footerContentBox">
-        <section>
+    <footer>
+      <div class="footer-content">
+        <section aria-label="Footer links">
           <h4>Links</h4>
           <ul>
             <li><a href="about.html">About Us</a></li>
@@ -178,14 +190,14 @@
           </ul>
         </section>
 
-        <section>
+        <section aria-label="Footer contact">
           <h4>Contact</h4>
           <address>
             <a href="mailto:contact@educonnect.example">contact@educonnect.example</a>
           </address>
         </section>
 
-        <section>
+        <section aria-label="Footer social media">
           <h4>Social</h4>
           <ul>
             <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -195,8 +207,7 @@
         </section>
       </div>
 
-      <section id="footerInfo" class="footerInfoBox">
-        <h4>Footer Information</h4>
+      <section aria-label="Footer copyright">
         <p>(c) 2025 EduConnect. All rights reserved.</p>
         <time datetime="2025-12-29">December 29, 2025</time>
       </section>
