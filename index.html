@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="EduConnect homepage featuring event highlights and quick search and filter options."
+      content="EventsX: The official dynamic event planner for EduConnect. Browse, filter, and register for campus workshops and seminars."
     >
     <meta
       name="keywords"
-      content="EduConnect, education, events, workshops, seminars, student activities, registration"
+      content="EventsX, EduConnect, event planner, student workshops, campus seminars, event registration"
     >
     <meta name="author" content="Your Full Name">
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="index.css">
-    <title>Home - EduConnect</title>
+    <title>EventsX Home - EduConnect</title>
   </head>
 
   <body id="homePage">
@@ -23,9 +23,9 @@
       <div id="brandSection" class="brandBox">
         <a href="index.html" id="homeLink" class="logoLink">
           <img
-            src="assets/logo.png"
-            alt="EduConnect logo"
-            width="120"
+            src="images/logo_image.jpeg"
+            alt="EventsX Logo - Powered by EduConnect"
+            width="200"
             height="120"
             id="logoImage"
             class="logoImg"
@@ -33,9 +33,9 @@
         </a>
 
         <div id="brandText" class="brandTextBox">
-          <h1 id="siteTitle" class="titleText">EduConnect</h1>
+          <h1 id="siteTitle" class="titleText">EventsX</h1>
           <p id="siteTagline" class="taglineText">
-            Your gateway to campus learning experiences and student events.
+           The Dynamic Event Planning Hub for the EduConnect Community.
           </p>
         </div>
       </div>
@@ -51,8 +51,8 @@
           <li><a href="contact.html" title="Contact us">Contact Me</a></li>
           <li>
             <a
-              href="https://www.exampleuniversity.edu"
-              id="navUniversity"
+              href="https://www.gu.edu.eg/"
+              id="GalalaUniversityLink"
               class="navLink"
               target="_blank"
               rel="noopener noreferrer"
@@ -67,7 +67,7 @@
     <main id="mainContent" class="mainBox">
       <header id="mainHeader" class="mainHeaderBox">
         <h2 id="mainHeading" class="mainTitle">
-          Featured Events &amp; Quick Access
+          Discover &amp; Plan Upcoming Events
         </h2>
       </header>
 
@@ -76,37 +76,38 @@
       <section class="content-columns" aria-label="Homepage content columns">
         <!-- ========== LEFT COLUMN: EVENT LISTINGS ========== -->
         <section class="event-listings" aria-label="Event listings">
-          <h3>Upcoming Highlights</h3>
+          <h3>Featured Campus Events </h3>
 
           <ul id="highlightsList" class="simpleList">
-            <li>Workshops: Hands-on skill-building sessions</li>
+            <li>Specialized technical training sessions</li>
             <li>Seminars: Talks by faculty and guest speakers</li>
             <li>Networking: Meet students and professionals</li>
           </ul>
 
           <article id="eventWebDesign" class="eventBox">
-            <h4 class="eventTitle">Web Design Sprint</h4>
+            <h4 class="eventTitle">Full-Stack Development Workshop</h4>
             <p class="eventText">
-              Learn semantic HTML and accessibility basics.
+             Master the art of building responsive web applications with EventsX.
               <time datetime="2026-01-10">January 10, 2026</time>
             </p>
 
             <figure class="mediaBox">
               <img
-                src="assets/event-1.jpg"
+                src="images/study1.jpeg"
                 alt="Students collaborating on laptops during a workshop"
               >
-              <figcaption>Students collaborating during our design sprint.</figcaption>
+              <figcaption>Collaborative learning during our monthly Tech Sprints.</figcaption>
             </figure>
 
             <ol class="numberList">
-              <li>Bring your laptop and charger.</li>
+              <li>Register through the Registration portal.</li>
+              <li>Bring your laptop .</li>
               <li>Arrive 15 minutes early.</li>
-              <li>Join a team and start building.</li>
+              <li>Join a team and start coding.</li>
             </ol>
 
             <p>
-              <a href="events.html" id="eventsLink" class="textLink">View events table</a>
+              <a href="events.html" id="eventsLink" class="textLink">View full event schedule</a>
             </p>
           </article>
 
@@ -118,7 +119,7 @@
             </p>
 
             <figure class="mediaBox">
-              <video src="assets/promo.mp4" controls></video>
+              <video src="vidoes/video.mp4" controls></video>
               <figcaption>Career seminar promo video.</figcaption>
             </figure>
           </article>
@@ -127,8 +128,10 @@
           <section aria-label="Event terminology">
             <h3>Event Terms</h3>
             <dl>
-              <dt>Workshop</dt>
-              <dd>Hands-on practical session.</dd>
+              <dt>Dynamic Filtering</dt>
+              <dd>The ability to sort events by category and cost instantly.</dd>
+              <dt>Budget Calculator</dt>
+              <dd>An internal tool to estimate your travel and attendance fees.</dd>
               <dt>Seminar</dt>
               <dd>Lecture with Q&amp;A.</dd>
               <dt>Networking</dt>
@@ -143,17 +146,17 @@
 
           <form action="events.html" id="filterForm">
             <fieldset>
-              <legend>Find an event</legend>
+              <legend>Find an Event</legend>
 
-              <label for="searchInput">Keyword</label>
+              <label for="searchInput"> Keyword</label>
               <input type="search" id="searchInput" name="q">
 
-              <label for="typeSelect">Event Type</label>
+              <label for="typeSelect">Event Category </label>
               <select id="typeSelect" name="type">
                 <option value="">Any</option>
-                <option value="workshop">Workshop</option>
-                <option value="seminar">Seminar</option>
-                <option value="networking">Networking</option>
+                <option value="workshop">Technical Workshop</option>
+                <option value="seminar">Academic Seminar</option>
+                <option value="networking">Professional Networking</option>
               </select>
 
               <label for="costInput">Max Cost</label>
