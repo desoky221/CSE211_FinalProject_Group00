@@ -8,71 +8,88 @@ Description:  Registration page specific styles.
 */
 
 /* Registration form container */
-.registration-form {
-  max-width: 700px;
+#formSection {
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* Consent and submit section */
-.consent-submit {
-  background-color: #f0f9ff;
-  padding: 2rem;
-  border-radius: 8px;
-  border: 2px solid var(--primary);
-  margin-top: 2rem;
+#registrationForm {
+  margin-top: var(--spacing-xl);
 }
 
-.consent-submit h3 {
-  color: var(--primary);
-  margin-top: 0;
-  margin-bottom: 1rem;
+/* Form fieldset enhancements */
+#registrationForm fieldset {
+  margin-bottom: var(--spacing-xl);
 }
 
-.consent-submit ul {
-  background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
-  border-left: 4px solid var(--accent);
+#registrationForm fieldset:last-of-type {
+  margin-bottom: var(--spacing-lg);
 }
 
-/* Checkbox styling for consent */
-.consent-submit p:has(input[type="checkbox"]) {
+/* Form paragraph spacing */
+#registrationForm p {
+  margin-bottom: var(--spacing-md);
+}
+
+#registrationForm p:has(input[type="checkbox"]) {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  background-color: var(--white);
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--color-border);
 }
 
-.consent-submit input[type="checkbox"] {
-  width: 1.2rem;
-  height: 1.2rem;
-  cursor: pointer;
+#registrationForm input[type="checkbox"] {
+  margin-top: 0.25rem;
+  flex-shrink: 0;
 }
 
-.consent-submit label[for="agree"] {
-  font-weight: 600;
-  color: var(--text-color);
+#registrationForm label[for="confirm"] {
   margin: 0;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
 }
 
-/* Button container */
-.consent-submit p:last-child {
-  text-align: center;
-  margin-bottom: 0;
+/* Form actions container */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 2px solid var(--color-border);
+  justify-content: center;
+}
+
+.form-actions button {
+  min-width: 180px;
+  flex: 1;
+  max-width: 300px;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .registration-form {
+  #formSection {
     max-width: 100%;
   }
-
-  .consent-submit {
-    padding: 1.5rem;
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions button {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  #registrationForm p:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
 

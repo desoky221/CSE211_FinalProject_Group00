@@ -11,29 +11,47 @@
     <title>Registration - EduConnect</title>
 </head>
 
-<body id="registrationPage">
-    <header id="siteHeader">
-        <div id="brandSection">
-            <a href="../index.html">
-                <img src="../images/logo_image.jpeg" alt="EventsX Logo" width="150" height="80">
-            </a>
-            <h1>EventsX</h1>
-        </div>
+  <body id="registrationPage">
+    <!-- ========== HEADER SECTION ========== -->
+    <header id="siteHeader" class="header">
+      <div id="brandSection" class="brand">
+        <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
+          <img
+            src="../images/logo.png"
+            alt="EventsX logo"
+            width="200"
+            height="120"
+            id="logoImage"
+            class="logoImg"
+          >
+        </a>
+        <h1 id="siteTitle" class="titleText">EventsX</h1>
+      </div>
 
-        <nav id="main-navigation" role="navigation" aria-label="Primary">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="events.html">Course Catalog</a></li>
-                <li><a href="student-dashboard.html">Student Dashboard</a></li>
-                <li><a href="registration.html">Registration</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-                <li>
-                    <a href="https://www.gu.edu.eg/" target="_blank" rel="noopener noreferrer">Galala University</a>
-                </li>
-            </ul>
-        </nav>
+      <!-- ========== MAIN NAVIGATION ========== -->
+      <nav id="mainNavigation" class="navBar" aria-label="Primary">
+        <ul id="navList" class="navList">
+          <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
+          <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a></li>
+          <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
+          <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink" title="Open student dashboard">Student Dashboard</a></li>
+          <li class="navItem"><a href="registration.html" id="navRegister" class="navLink" title="Register for an event">Registration</a></li>
+          <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a></li>
+          <li class="navItem">
+            <a
+              href="https://www.gu.edu.eg/"
+              id="navUniversity"
+              class="navLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit University Website"
+            >Galala University</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- ========== END MAIN NAVIGATION ========== -->
     </header>
+    <!-- ========== END HEADER ========= -->
     <nav class="breadcrumb" aria-label="breadcrumb">
         <a href="../index.html">Home</a> &gt; Registration
     </nav>

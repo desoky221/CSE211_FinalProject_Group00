@@ -8,172 +8,175 @@ Description:  Events page specific styles.
 */
 
 /* Events table section */
-.events-table {
-  margin-bottom: 3rem;
+#tableSection {
+  margin-bottom: var(--spacing-2xl);
 }
 
-.events-table h3 {
-  color: var(--primary);
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
+#tableSection h3 {
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 /* Enhanced table styling */
-.events-table table {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
+#eventsTable {
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
 }
 
-.events-table caption {
-  font-size: 1.3rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  border-radius: 8px 8px 0 0;
+#eventsTable caption {
+  font-size: var(--font-size-xl);
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-hover) 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   margin-bottom: 0;
-  color: var(--primary);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
 }
 
-.events-table thead th {
-  font-size: 1.05rem;
+#eventsTable thead th {
+  font-size: var(--font-size-base);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 1.25rem 1rem;
+  padding: var(--spacing-lg);
 }
 
-.events-table tbody td {
-  padding: 1.25rem 1rem;
-  font-size: 1rem;
+#eventsTable tbody td {
+  padding: var(--spacing-lg);
+  font-size: var(--font-size-base);
 }
 
 /* Alternating row colors */
-.events-table tbody tr:nth-child(odd) {
-  background-color: #fafafa;
+#eventsTable tbody tr:nth-child(odd) {
+  background-color: var(--color-bg-tertiary);
 }
 
-.events-table tbody tr:nth-child(even) {
-  background-color: var(--white);
+#eventsTable tbody tr:nth-child(even) {
+  background-color: var(--color-bg-secondary);
 }
 
 /* Enhanced hover effect */
-.events-table tbody tr:hover {
-  background-color: #e0f2fe;
-  transform: scale(1.01);
-  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.1);
-  transition: all 0.2s ease;
+#eventsTable tbody tr:hover {
+  background-color: rgba(74, 155, 142, 0.08);
+  transform: scale(1.005);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
 }
 
 /* Event name column styling */
-.events-table tbody td:first-child {
-  font-weight: 600;
-  color: var(--primary);
+#eventsTable tbody td:first-child {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
 }
 
 /* Cost column styling - highlight free events */
-.events-table tbody td:last-child {
-  font-weight: 600;
+#eventsTable tbody td:last-child {
+  font-weight: var(--font-weight-semibold);
   text-align: center;
 }
 
-.events-table tbody tr:has(td:last-child:contains("Free")) td:last-child {
-  color: var(--success);
-  background-color: #f0fdf4;
-  border-radius: 6px;
-  padding: 0.5rem;
+#eventsTable tbody tr:has(td:last-child:contains("Free")) td:last-child {
+  color: var(--color-success);
+  background-color: rgba(74, 155, 142, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
 }
 
 /* Date column styling */
-.events-table tbody td:nth-child(2) {
-  color: #64748b;
+#eventsTable tbody td:nth-child(2) {
+  color: var(--color-text-secondary);
 }
 
 /* Location column with icon */
-.events-table tbody td:nth-child(3)::before {
+#eventsTable tbody td:nth-child(3)::before {
   content: "📍 ";
-  margin-right: 0.25rem;
+  margin-right: var(--spacing-xs);
 }
 
 /* Helpful notes section */
-.helpful-notes {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  padding: 2.5rem;
-  border-radius: 12px;
-  border-left: 5px solid var(--accent);
-  margin-bottom: 2rem;
+#notesSection {
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(212, 165, 116, 0.05) 100%);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  border-left: 5px solid var(--color-accent);
+  margin-bottom: var(--spacing-xl);
 }
 
-.helpful-notes h3 {
-  color: var(--accent);
+#notesSection h3 {
+  color: var(--color-accent);
   margin-top: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--spacing-lg);
 }
 
-.helpful-notes ol {
-  background-color: var(--white);
-  padding: 2rem 2rem 2rem 3rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+#notesSection ol {
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-2xl);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
-.helpful-notes li {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  line-height: 1.8;
+#notesSection li {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
 }
 
-.helpful-notes li:last-child {
+#notesSection li:last-child {
   margin-bottom: 0;
 }
 
 /* Related media section */
-.related-media {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  padding: 2.5rem;
-  border-radius: 12px;
-  border-left: 5px solid var(--success);
+#gallerySection {
+  background: linear-gradient(135deg, rgba(74, 155, 142, 0.1) 0%, rgba(74, 155, 142, 0.05) 100%);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  border-left: 5px solid var(--color-secondary);
 }
 
-.related-media h3 {
-  color: var(--success);
+#gallerySection h3 {
+  color: var(--color-secondary);
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
 }
 
-.related-media figure {
+#gallerySection figure {
   margin: 0;
 }
 
-.related-media img {
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+#gallerySection img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.related-media img:hover {
+#gallerySection img:hover {
   transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .events-table table {
-    font-size: 0.85rem;
+  #eventsTable {
+    font-size: var(--font-size-sm);
   }
 
-  .events-table thead th,
-  .events-table tbody td {
-    padding: 0.75rem 0.5rem;
+  #eventsTable thead th,
+  #eventsTable tbody td {
+    padding: var(--spacing-md) var(--spacing-sm);
   }
 
-  .events-table caption {
-    font-size: 1.1rem;
+  #eventsTable caption {
+    font-size: var(--font-size-lg);
   }
 
-  .helpful-notes,
-  .related-media {
-    padding: 1.5rem;
+  #notesSection,
+  #gallerySection {
+    padding: var(--spacing-lg);
   }
 
-  .helpful-notes ol {
-    padding: 1.5rem 1.5rem 1.5rem 2rem;
+  #notesSection ol {
+    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) var(--spacing-xl);
   }
 }
 
