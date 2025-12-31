@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="About EventsX : purpose, audience, and how the platform helps students discover learning opportunities."
+      content="Budget calculator form for estimating event-related costs such as tickets, transportation, and materials."
     >
     <meta
       name="keywords"
-      content=" EduConnect, About Us, education platform, student events, workshops, seminars"
+      content="EduConnect, budget calculator, event costs, transportation, materials, estimate"
     >
     <meta name="author" content="Your Full Name">
-    <title>About Us EventsX- EduConnect</title>
+    <title>Budget Calculator - EduConnect</title>
   </head>
 
-  <body id="aboutPage">
+  <body id="budgetPage">
     <!-- ========== HEADER SECTION ========== -->
     <header id="siteHeader" class="headerBox">
       <div id="brandSection" class="brandBox">
@@ -29,7 +29,7 @@
             class="logoImg"
           >
         </a>
-        <h1 id="siteTitle" class="titleText">EduConnect</h1>
+        <h1 id="siteTitle" class="titleText">EventsX</h1>
       </div>
 
       <!-- ========== MAIN NAVIGATION ========== -->
@@ -37,19 +37,19 @@
         <ul id="navList" class="navListBox">
           <li class="navItem"><a href="index.html" id="navHome" class="navLink" title="Home">Home</a></li>
           <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a></li>
-          <li class="navItem"><a href="course-catalog.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
+          <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
           <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink" title="Open student dashboard">Student Dashboard</a></li>
           <li class="navItem"><a href="registration.html" id="navRegister" class="navLink" title="Register for an event">Registration</a></li>
           <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a></li>
           <li class="navItem">
             <a
               href="https://www.gu.edu.eg/"
-              id="GalalaUniversityLink"
+              id="GalalaUniversity"
               class="navLink"
               target="_blank"
               rel="noopener noreferrer"
               title="Visit University Website"
-            > Galala University </a>
+            >GalalaUniversity</a>
           </li>
         </ul>
       </nav>
@@ -61,66 +61,118 @@
     <nav id="breadcrumbNav" class="breadcrumbBox" aria-label="breadcrumb">
       <a href="index.html" id="breadcrumbHome" class="breadcrumbLink" title="Home">Home</a>
       <span id="breadcrumbSeparator" class="breadcrumbSep">&gt;</span>
-      <span id="breadcrumbCurrent" class="breadcrumbCurrent">About Us</span>
+      <span id="breadcrumbCurrent" class="breadcrumbCurrent">Budget Calculator</span>
     </nav>
     <!-- ========== END BREADCRUMB ========== -->
 
     <!-- ========== MAIN SECTION ========== -->
     <main id="mainContent" class="mainBox">
       <header id="pageHeader" class="pageHeaderBox">
-        <h2 id="pageTitle" class="pageTitleText">About EduConnect</h2>
+        <h2 id="pageTitle" class="pageTitleText">Budget Calculator</h2>
+        <p id="pageIntro" class="paragraphText">
+          Fill the fields and calculate your total manually.
+          You can also save/print this page.
+        </p>
       </header>
 
-      <section id="purposeSection" class="contentSection">
-        <h3 id="purposeTitle" class="sectionTitle">Our Purpose</h3>
-        <p id="purposeText" class="paragraphText">
-          EventsX is a dynamic, responsive event planner designed exclusively for the EduConnect student portal. 
-          Our mission is to bridge the gap between academic learning and campus life by providing a centralized 
-          hub where students can discover, organize, and manage their participation in various educational events.
-        </p>
+      <section id="budgetSection" class="contentSection">
+        <h3 id="budgetSectionTitle" class="sectionTitle">Budget Form</h3>
 
-        <figure id="aboutFigure" class="mediaBox">
-          <img
-            src="images/study2.jpg"
-            alt="Students attending an educational session with a presenter"
-            width="640"
-            height="360"
-            id="aboutImage"
-            class="mediaImg"
-          >
-          <figcaption id="aboutCaption" class="mediaCaption">
-            Learning is better when it’s connected.
-          </figcaption>
-        </figure>
+        <form action="#" method="post" id="budgetForm" class="formBox">
+          <fieldset id="costFieldset" class="fieldsetBox">
+            <legend id="costLegend" class="legendText">Event Costs</legend>
+
+            <p class="formRow">
+              <label for="ticketCost" class="formLabel">Ticket / Entry Cost</label>
+              <input
+                type="number"
+                id="ticketCost"
+                name="ticketCost"
+                class="formInput"
+                min="0"
+                step="1"
+                placeholder="0"
+                title="Ticket cost"
+              >
+            </p>
+
+            <p class="formRow">
+              <label for="transportCost" class="formLabel">Travel &amp; Transportation</label>
+              <input
+                type="number"
+                id="transportCost"
+                name="transportCost"
+                class="formInput"
+                min="0"
+                step="1"
+                placeholder="0"
+                title="Transportation cost"
+              >
+            </p>
+
+            <p class="formRow">
+              <label for="materialsCost" class="formLabel">Books &amp; Workshop Materials</label>
+              <input
+                type="number"
+                id="materialsCost"
+                name="materialsCost"
+                class="formInput"
+                min="0"
+                step="1"
+                placeholder="0"
+                title="Materials cost"
+              >
+            </p>
+
+            <p class="formRow">
+              <label for="foodCost" class="formLabel">Accommodation / Meals</label>
+              <input
+                type="number"
+                id="foodCost"
+                name="foodCost"
+                class="formInput"
+                min="0"
+                step="1"
+                placeholder="0"
+                title="Food cost"
+              >
+            </p>
+          </fieldset>
+
+          <fieldset id="guideFieldset" class="fieldsetBox">
+            <legend id="guideLegend" class="legendText">Calculation Guide</legend>
+
+            <ol id="guideSteps" class="numberList">
+             <li>List all individual expenses based on the event details page.</li>
+              <li>Sum the values to find your net total requirement.</li>
+              <li>Ensure your student portal funds cover the estimated total.</li>
+            </ol>
+
+            <dl id="guideDefinitions" class="definitionList">
+              <dt>Net Total</dt>
+              <dd>The primary sum of all direct event-related expenses.</dd>
+              <dt>Contingency Buffer</dt>
+              <dd>Recommended 15% extra for unplanned travel or material needs.</dd>
+              <dt>EduConnect Grant</dt>
+              <dd>Potential university subsidies available for approved workshops.</dd>
+            </dl>
+          </fieldset>
+
+          <p id="formActions" class="buttonRow">
+            <button type="submit" id="submitBtn" class="actionBtn" title="Submit (placeholder)">Submit</button>
+            <button type="reset" id="clearBtn" class="actionBtn" title="Clear fields">Clear</button>
+          </p>
+        </form>
       </section>
 
-      <section id="audienceSection" class="contentSection">
-        <h3 id="audienceTitle" class="sectionTitle">Who It’s For</h3>
-        <ul id="audienceList" class="simpleList">
-          <li>Students looking for workshops and seminars</li>
-          <li>New learners exploring campus opportunities</li>
-          <li>Anyone who wants structured learning experiences</li>
+      <aside id="tipAside" class="asideBox" aria-label="Budget tip">
+        <h3 id="tipTitle" class="sectionTitle">Tip</h3>
+        <ul id="tipList" class="simpleList">
+          <li>Early bird registration for EventsX workshops usually saves 20%.</li>
+          <li>Check the Student Dashboard for group travel discounts.</li>
+          <li>Save a digital copy of this estimate for your records.</li>
         </ul>
-      </section>
-
-      <section id="howSection" class="contentSection">
-        <h3 id="howTitle" class="sectionTitle">How It Works</h3>
-
-        <ol id="howSteps" class="numberList">
-          <li>Browse upcoming events.</li>
-          <li>Register using a simple form.</li>
-          <li>Estimate your costs using the budget calculator.</li>
-        </ol>
-
-        <dl id="howDefinitions" class="definitionList">
-          <dt>Events Page</dt>
-          <dd>Shows a table of events with dates, locations, and cost.</dd>
-          <dt>Registration Page</dt>
-          <dd>Collects your details and confirms your submission.</dd>
-          <dt>Budget Calculator</dt>
-          <dd>A smart tool that calculates total costs for tickets, travel, and materials.</dd>
-        </dl>
-      </section>
+      </aside>
     </main>
     <!-- ========== END MAIN SECTION ========== -->
 
@@ -141,12 +193,9 @@
           <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
           <address id="footerAddress" class="addressBox">
             Email:
-            <a
-              href="mailto:contact@educonnect.example"
-              id="footerEmail"
-              class="footerLink"
-              title="Send us an email"
-            >contact@educonnect.example</a>
+            <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink" title="Send us an email">
+              contact@educonnect.example
+            </a>
           </address>
         </section>
 
@@ -187,9 +236,9 @@
         </section>
       </div>
 
-      <section id="footerInfo" class="footerInfoBox">
-        <h4 id="footerInfoTitle" class="footerTitle">Footer Information</h4>
-        <p id="copyrightText" class="footerText">(c) 2025 EduConnect. All rights reserved.</p>
+      <section id="footerInfo" class="footerInfo">
+        
+        <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
         <p id="updatedText" class="footerText">
           Last Updated:
           <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">

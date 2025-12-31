@@ -12,16 +12,17 @@
       content="EduConnect, events, schedule, workshop, seminar, location, cost"
     >
     <meta name="author" content="Your Full Name">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Events - EduConnect</title>
   </head>
 
   <body id="eventsPage">
     <!-- ========== HEADER SECTION ========== -->
-    <header id="siteHeader" class="headerBox">
-      <div id="brandSection" class="brandBox">
-        <a href="index.html" id="homeLink" class="logoLink" title="Go to EduConnect Home">
+    <header id="siteHeader" class="header">
+      <div id="brandSection" class="brandSection">
+        <a href="../index.html" id="homeLink" class="logoLink" title="Go to EduConnect Home">
           <img
-            src="assets/logo.png"
+            src="../images/logo_image.jpeg"
             alt="EduConnect logo"
             width="120"
             height="120"
@@ -34,22 +35,22 @@
 
       <!-- ========== MAIN NAVIGATION ========== -->
       <nav id="mainNavigation" class="navBar" aria-label="Primary">
-        <ul id="navList" class="navListBox">
-          <li class="navItem"><a href="index.html" id="navHome" class="navLink" title="Home">Home</a></li>
+        <ul id="navList" class="navList">
+          <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
           <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a></li>
-          <li class="navItem"><a href="course-catalog.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
+          <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
           <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink" title="Open student dashboard">Student Dashboard</a></li>
           <li class="navItem"><a href="registration.html" id="navRegister" class="navLink" title="Register for an event">Registration</a></li>
           <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a></li>
           <li class="navItem">
             <a
-              href="https://www.exampleuniversity.edu"
+              href="https://www.gu.edu.eg/"
               id="navUniversity"
               class="navLink"
               target="_blank"
               rel="noopener noreferrer"
               title="Visit University Website"
-            >University Name</a>
+            >Galala University</a>
           </li>
         </ul>
       </nav>
@@ -58,16 +59,16 @@
     <!-- ========== END HEADER ========= -->
 
     <!-- ========== BREADCRUMB ========== -->
-    <nav id="breadcrumbNav" class="breadcrumbBox" aria-label="breadcrumb">
-      <a href="index.html" id="breadcrumbHome" class="breadcrumbLink" title="Home">Home</a>
+    <nav id="breadcrumbNav" class="breadcrumb" aria-label="breadcrumb">
+      <a href="../index.html" id="breadcrumbHome" class="breadcrumbLink" title="Home">Home</a>
       <span id="breadcrumbSeparator" class="breadcrumbSep">&gt;</span>
       <span id="breadcrumbCurrent" class="breadcrumbCurrent">Events</span>
     </nav>
     <!-- ========== END BREADCRUMB ========== -->
 
     <!-- ========== MAIN SECTION ========== -->
-    <main id="mainContent" class="mainBox">
-      <header id="pageHeader" class="pageHeaderBox">
+      <main id="mainContent" class="main">
+      <header id="pageHeader" class="pageHeader">
         <h2 id="pageTitle" class="pageTitleText">Upcoming Events</h2>
         <p id="pageIntro" class="paragraphText">
           Browse the full schedule and pick what fits your goals.
@@ -77,7 +78,7 @@
       <section id="tableSection" class="contentSection">
         <h3 id="tableTitle" class="sectionTitle">Event Schedule</h3>
 
-        <table id="eventsTable" class="tableBox">
+          <table id="eventsTable" class="table">
           <caption id="tableCaption">EduConnect Upcoming Events</caption>
           <thead id="tableHead">
             <tr>
@@ -112,6 +113,40 @@
               <td>Conference Room 2</td>
               <td>$15</td>
             </tr>
+            <tr>
+              <td>Python Programming Workshop</td>
+              <td><time datetime="2026-04-15">April 15, 2026</time></td>
+              <td>Computer Lab B</td>
+              <td>$12</td>
+            </tr>
+            <tr>
+              <td>AI & Machine Learning Summit</td>
+              <td><time datetime="2026-05-10">May 10, 2026</time></td>
+              <td>Main Auditorium</td>
+              <td>$20</td>
+            </tr>
+            <!-- Special Weekend Workshop - spans multiple days -->
+            <tr>
+              <td rowspan="2">Full Stack Development Bootcamp<br><small>(2-Day Workshop)</small></td>
+              <td><time datetime="2026-06-05">June 5, 2026</time> (Day 1)</td>
+              <td rowspan="2">Tech Hub - Building 5</td>
+              <td rowspan="2">$50</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-06-06">June 6, 2026</time> (Day 2)</td>
+            </tr>
+            <!-- Special Section Header -->
+            <tr class="special-header">
+              <td colspan="4">
+                Summer Special Events (Coming Soon)
+              </td>
+            </tr>
+            <tr>
+              <td>Entrepreneurship Workshop</td>
+              <td><time datetime="2026-07-20">July 20, 2026</time></td>
+              <td>Business Center</td>
+              <td>Free</td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -127,16 +162,16 @@
 
       <section id="gallerySection" class="contentSection">
         <h3 id="galleryTitle" class="sectionTitle">Event Gallery</h3>
-        <figure id="eventFigure" class="mediaBox">
+        <figure id="eventFigure1" class="mediaSection">
           <img
-            src="assets/event-2.jpg"
+            src="../images/event-2.jpg"
             alt="Speaker presenting to students in a lecture hall"
             width="640"
             height="360"
-            id="eventImage"
+            id="eventImage1"
             class="mediaImg"
           >
-          <figcaption id="eventCaption" class="mediaCaption">
+          <figcaption id="eventCaption1" class="mediaCaption">
             A snapshot from a previous seminar session.
           </figcaption>
         </figure>
@@ -145,8 +180,8 @@
     <!-- ========== END MAIN SECTION ========== -->
 
     <!-- ========== FOOTER SECTION ========== -->
-    <footer id="siteFooter" class="footerBox">
-      <div id="footerContent" class="footerContentBox">
+    <footer id="siteFooter" class="footer">
+      <div id="footerContent" class="footerContent">
         <section id="footerLinksSection" class="footerSection">
           <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
           <ul id="footerLinksList" class="footerList">
@@ -159,7 +194,7 @@
 
         <section id="footerContactSection" class="footerSection">
           <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
-          <address id="footerAddress" class="addressBox">
+          <address id="footerAddress" class="address">
             Email:
             <a
               href="mailto:contact@educonnect.example"
@@ -207,9 +242,9 @@
         </section>
       </div>
 
-      <section id="footerInfo" class="footerInfoBox">
+      <section id="footerInfo" class="footerInfo">
         <h4 id="footerInfoTitle" class="footerTitle">Footer Information</h4>
-        <p id="copyrightText" class="footerText">(c) 2025 EduConnect. All rights reserved.</p>
+        <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
         <p id="updatedText" class="footerText">
           Last Updated:
           <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
