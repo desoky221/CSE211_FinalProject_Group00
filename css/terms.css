@@ -11,8 +11,8 @@
     margin: 2rem auto;
 }
 
-/* Section Styling */
-#termsPage section {
+/* Section Styling - Only for main content sections, not footer */
+#termsPage main section {
     background-color: #ffffff;
     border-left: 4px solid #764ba2;
     padding: 2rem;
@@ -21,7 +21,7 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-#termsPage section h2 {
+#termsPage main section h2 {
     color: #764ba2;
     font-size: 1.75rem;
     margin-top: 0;
@@ -30,7 +30,7 @@
     border-bottom: 2px solid #e0e0e0;
 }
 
-#termsPage section h3 {
+#termsPage main section h3 {
     color: #555;
     font-size: 1.25rem;
     margin-top: 1.5rem;
@@ -172,11 +172,11 @@
         margin: 1rem auto;
     }
 
-    #termsPage section {
+    #termsPage main section {
         padding: 1.5rem;
     }
 
-    #termsPage section h2 {
+    #termsPage main section h2 {
         font-size: 1.5rem;
     }
 
