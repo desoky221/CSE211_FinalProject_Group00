@@ -1,0 +1,659 @@
+/* 
+   STUDENT DASHBOARD - HIGH END REDESIGN
+   Uses variables from common.css
+*/
+
+/* Dashboard Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Page Header Override (Modern Dashboard Hero) */
+.pageHeader {
+  background: linear-gradient(120deg, var(--color-primary), #2d4f7a);
+  color: white;
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 25px -5px rgba(30, 58, 95, 0.3);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.pageHeader::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
+  transform: rotate(25deg);
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.pageTitleText {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+/* Remove decorative pill from main page title */
+.pageHeader h2::before {
+  content: none;
+  display: none;
+}
+
+.pageIntro {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+/* Glassmorphic Stats Panel (New Grid Layout) */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.stat-value {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  letter-spacing: -0.5px;
+  padding-left: 10px;
+}
+
+h2::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 20px;
+  background: var(--color-secondary);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(74, 155, 142, 0.3);
+}
+
+#enrolled-courses {
+  display: grid;
+  gap: 2rem;
+}
+
+#enrolled-courses article {
+  background: white;
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 10px 15px rgba(0, 0, 0, 0.03);
+  display: flex;
+  /* Flexbox for better control than grid here */
+  flex-direction: row;
+  height: 220px;
+  /* Fixed premium height */
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+#enrolled-courses article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(30, 58, 95, 0.15);
+  border-color: rgba(74, 155, 142, 0.3);
+}
+
+#enrolled-courses figure {
+  margin: 0;
+  width: 320px;
+  /* Wider, more cinematic image */
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#enrolled-courses img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  /* Slower, smoother zoom */
+}
+
+#enrolled-courses article:hover img {
+  transform: scale(1.08);
+}
+
+/* Gradient Overlay on Image for text contrast if needed, but here just purely aesthetic */
+#enrolled-courses figure::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.05), transparent);
+  pointer-events: none;
+}
+
+.course-details {
+  flex-grow: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.course-details h3 {
+  margin: 0 0 1rem 0;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+}
+
+.course-details p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Style the "Strong" tags */
+.course-details strong {
+  color: var(--color-primary-light);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* Distinct Action Area */
+.course-action {
+  width: 280px;
+  flex-shrink: 0;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #fafafc, white);
+  border-left: 1px solid var(--color-border-light);
+}
+
+/* Button Refinement */
+.continue-btn {
+  background: var(--color-primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  /* Pill shape */
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.continue-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(30, 58, 95, 0.3);
+  background: linear-gradient(135deg, var(--color-secondary), #3d8b7d);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  #enrolled-courses article {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #enrolled-courses figure {
+    width: 100%;
+    height: 200px;
+  }
+
+  .course-action {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--color-border-light);
+    flex-direction: row;
+    justify-content: space-between;
+    background: white;
+  }
+
+  .continue-btn {
+    width: auto;
+    margin: 0;
+    padding: 0.8rem 2rem;
+  }
+}
+
+/* Statistics Grid (Detailed - New Grid) */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-box {
+  background: white;
+  padding: 1.75rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(74, 155, 142, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-box:hover::after {
+  transform: scaleX(1);
+}
+
+.stat-title {
+  display: block;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.stat-number {
+  display: block;
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  background: -webkit-linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sidebar Styling */
+.sidebar-column {
+  background: white;
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+  height: fit-content;
+  border: 1px solid var(--color-border-light);
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-column h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Modern Calendar (Rounded Widget) */
+.calendar-wrapper {
+  background: white;
+  /* Clean white for widget feel */
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 6px;
+  /* wider spacing for pills */
+}
+
+.calendar-table caption {
+  caption-side: top;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.calendar-table th {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  padding: 0.5rem 0;
+  font-weight: 600;
+}
+
+.calendar-table td {
+  background: #f1f5f9;
+  text-align: center;
+  padding: 0;
+  /* use flex centering */
+  width: 38px;
+  height: 38px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  /* Smooth rounded rects */
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: var(--color-text-primary);
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.calendar-table td:empty {
+  background: transparent;
+  cursor: default;
+}
+
+.calendar-table td:hover:not(:empty) {
+  background: var(--color-secondary-light);
+  color: white;
+  transform: scale(1.1);
+}
+
+.calendar-table td.active {
+  background: var(--color-secondary);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(74, 155, 142, 0.4);
+  transform: scale(1.05);
+}
+
+/* Upcoming Deadlines */
+#upcoming-deadlines ol {
+  counter-reset: deadline;
+  margin: 0;
+  padding: 0;
+}
+
+#upcoming-deadlines li {
+  position: relative;
+  list-style: none;
+  background: white;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-light);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: transform 0.2s;
+}
+
+#upcoming-deadlines li:hover {
+  transform: translateX(4px);
+  border-color: var(--color-secondary);
+}
+
+#upcoming-deadlines li::before {
+  counter-increment: deadline;
+  content: counter(deadline);
+  background: var(--color-accent);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(212, 165, 116, 0.3);
+}
+
+/* Badges */
+#badgesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+#badgesList li {
+  background: #f0fdfa;
+  /* Light teal bg */
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  /* Fully rounded pills */
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(74, 155, 142, 0.2);
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+#badgesList li:hover {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+#badgesList img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #enrolled-courses article {
+    grid-template-columns: 1fr;
+  }
+
+  #enrolled-courses figure {
+    height: 200px;
+  }
+
+}
+
+
+/* ============================================
+   RECENT ACTIVITY (Vertical Timeline)
+   ============================================ */
+#recent-activity {
+  position: relative;
+  padding-left: 1rem;
+}
+
+#recent-activity h2 {
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+/* The Vertical Line */
+#recent-activity::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  /* Start below title */
+  bottom: 20px;
+  left: 28px;
+  /* Position line */
+  width: 2px;
+  background: #e2e8f0;
+  border-radius: 2px;
+}
+
+#recent-activity article {
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
+}
+
+#recent-activity article:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Nodes (Dots) */
+#recent-activity article::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  /* Align with line center (28px) - half width */
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border: 3px solid var(--color-secondary);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px white;
+  /* Spacing from line */
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect on Node */
+#recent-activity article:hover::before {
+  background: var(--color-secondary);
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(74, 155, 142, 0.15);
+}
+
+/* Typography & Content */
+#recent-activity h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 0.4rem 0;
+}
+
+#recent-activity p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Specific styling for the Description line (First p) */
+#recent-activity p:first-of-type {
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+/* Timestamp Styling (Second p) */
+#recent-activity p:last-of-type {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
+}

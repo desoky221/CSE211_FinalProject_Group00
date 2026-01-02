@@ -1,0 +1,342 @@
+/*
+ID & Name:    [Refactored by EventX Assistant]
+Description:  Budget calculator styled with "Soft Modern" aesthetics.
+              Features a light, airy split layout with rounded details and minimal padding in the guide.
+*/
+
+.main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* Normalize text spacing */
+#pageHeader {
+  padding: 3rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#pageIntro {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+#budgetSection {
+  margin-bottom: 2rem;
+}
+
+#budgetSectionTitle {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+}
+
+/* ============================================
+   CONTAINER CARD (Soft Glass Look)
+   ============================================ */
+.budget-form {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+}
+
+.formBox {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background: white;
+  border-radius: 30px;
+  /* Super Round */
+  box-shadow: 0 20px 80px rgba(30, 58, 95, 0.08), 0 10px 30px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================
+   LEFT COLUMN: INPUTS (Spacious & Clean)
+   ============================================ */
+#costFieldset {
+  padding: 2.5rem;
+  background: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Reduce gap between legend and first form row */
+#costFieldset > .legendText {
+  margin-bottom: 0;
+}
+
+#costFieldset > .formRow:first-of-type {
+  margin-top: -0.5rem;
+}
+
+.legendText {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+  border-bottom: none;
+  padding: 0;
+}
+
+/* Subtle Helper Text */
+.legendText::after {
+  content: 'Enter your details below.';
+  display: block;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  letter-spacing: 0;
+}
+
+/* Inputs */
+.formRow {
+  margin-bottom: 0;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  border: 1px solid transparent;
+  background: #f1f5f9;
+  /* Soft Grey background */
+  border-radius: 16px;
+  /* Friendly Roundness */
+  color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.formInput:focus {
+  outline: none;
+  background: white;
+  border-color: var(--color-secondary);
+  box-shadow: 0 8px 20px rgba(74, 155, 142, 0.1);
+  transform: translateY(-2px);
+}
+
+.formInput::placeholder {
+  color: #cbd5e1;
+}
+
+/* Buttons */
+.buttonRow {
+  margin-top: 1.5rem;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  grid-column: 1;
+}
+
+/* Fix grid placement */
+#costFieldset {
+  grid-column: 1;
+}
+
+.buttonRow {
+  grid-column: 1;
+  padding: 0 2.5rem 2.5rem;
+}
+
+.actionBtn {
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+#submitBtn {
+  background: linear-gradient(135deg, var(--color-secondary), #3d8b7d);
+  color: white;
+  flex-grow: 1;
+  /* Make it wide */
+  box-shadow: 0 4px 15px rgba(74, 155, 142, 0.25);
+}
+
+#submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(74, 155, 142, 0.35);
+}
+
+#clearBtn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: var(--color-text-secondary);
+  padding: 1rem 1.5rem;
+}
+
+#clearBtn:hover {
+  background: #f8fafc;
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+
+/* ============================================
+   RIGHT COLUMN: GUIDE (Light, Gradient, Compact)
+   ============================================ */
+#guideFieldset {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  /* Distinct Background Color as requested */
+  background: #f1f8fa;
+  /* Very soft teal/grey */
+  border-left: 1px solid #e2e8f0;
+  /* Normalized padding */
+  padding: 2.5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#guideLegend {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 0;
+  opacity: 1;
+  border: none;
+}
+
+#guideLegend::after {
+  content: 'Live Estimate';
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Visual List (Checkmarks) */
+#guideFieldset .numberList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+/* Reduce space between LIVE ESTIMATE and the list */
+#guideFieldset > .legendText {
+  margin-bottom: 0;
+}
+
+#guideFieldset > .numberList {
+  margin-top: 0.25rem;
+}
+
+#guideFieldset .numberList li {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding-left: 1.5rem;
+  position: relative;
+  border: none;
+}
+
+#guideFieldset .numberList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-secondary);
+  border-radius: 50%;
+}
+
+/* The "Receipt" Result Box (Integrated) */
+.definitionList {
+  margin-top: auto;
+  /* Push to bottom */
+  background: white;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.definitionList dt {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.definitionList dt:first-child {
+  margin-top: 0;
+}
+
+.definitionList dd {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.definitionList dd:not(:first-of-type) {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Tiny divider in receipt */
+.definitionList dt:not(:first-child) {
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 0.75rem;
+}
+
+/* Tips (Keep hidden or minimal) */
+.asideBox {
+  display: none;
+  /* Simplify for cleaner look */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .formBox {
+    grid-template-columns: 1fr;
+  }
+
+  #costFieldset,
+  .buttonRow,
+  #guideFieldset {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 2rem;
+  }
+
+  .buttonRow {
+    order: 2;
+    padding-bottom: 0;
+    margin-bottom: 2rem;
+  }
+
+  #guideFieldset {
+    order: 3;
+    background: #f1f8fa;
+    border-top: 1px solid #e2e8f0;
+    border-left: none;
+  }
+}

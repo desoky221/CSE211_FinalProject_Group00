@@ -1,0 +1,102 @@
+/*
+ID & Name:    [Refactored by EventX Assistant]
+Description:  Terms of Service page specific styles.
+              Aligned with Global Design System.
+*/
+
+/* Content Container */
+#termsPage main {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+/* Section Styling */
+#termsPage main section {
+    background-color: var(--color-bg-secondary);
+    border-left: 4px solid var(--color-secondary);
+    /* Soft Teal for Terms */
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-light);
+}
+
+#termsPage main section h2 {
+    color: var(--color-secondary-dark);
+    font-size: 1.5rem;
+    margin-top: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: 1.5rem;
+}
+
+#termsPage main section h3 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+/* Typography */
+#termsPage p,
+#termsPage li {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+#termsPage strong {
+    color: var(--color-primary);
+}
+
+/* Agreement Box */
+#termsPage .agreement-box {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+#termsPage .agreement-box h3 {
+    color: white;
+    margin-top: 0;
+}
+
+#termsPage .agreement-box p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Important Notice */
+#termsPage .notice {
+    background-color: rgba(200, 93, 93, 0.1);
+    /* Error light */
+    border-left: 4px solid var(--color-error);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+}
+
+#termsPage .notice h3,
+#termsPage .notice p {
+    color: var(--color-error);
+    margin: 0;
+}
+
+/* DL styling */
+#termsPage dl {
+    background: var(--color-bg-tertiary);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+}
+
+#termsPage dt {
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+#termsPage dd {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
