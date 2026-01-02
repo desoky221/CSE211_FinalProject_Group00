@@ -1,58 +1,168 @@
-/*
-ID & Name:    [Your ID & Full Name]
-Course:       CSE211 Web Programming
-Assignment:   Course Project
-Date:         2025/12/30
-Description:  About page specific styles.
-              Enhances common.css styles for contentSection and sectionTitle.
+/* 
+   About Page - High End Refactor
+   Features: Card-based layout, smooth entry animations, and rich typography.
 */
 
-/* Section Title Styling */
-.sectionTitle {
-  color: var(--color-primary);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--color-primary);
+/* Main Content Wrapper */
+.main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
 }
 
-/* Content Section Enhancements */
+/* Base Styles for Sections - Turning them into Cards */
 .contentSection {
-  background-color: var(--color-bg-secondary);
-  padding: var(--spacing-xl);
+  background: white;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  border-left: 4px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.6s ease-out forwards;
+  opacity: 0;
+  /* Hidden initially for animation */
 }
 
-.contentSection figure {
-  margin: var(--spacing-lg) auto;
-  max-width: 100%;
+.contentSection:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
-.contentSection img {
+/* Staggered Animation Delays */
+#purposeSection {
+  animation-delay: 0.1s;
+}
+
+#missionSection {
+  animation-delay: 0.2s;
+}
+
+#visionSection {
+  animation-delay: 0.3s;
+}
+
+#audienceSection {
+  animation-delay: 0.4s;
+}
+
+#howSection {
+  animation-delay: 0.5s;
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--color-secondary-light);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Typography */
+.paragraphText {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* Lists Styling */
+.simpleList,
+.numberList {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.simpleList li,
+.numberList li {
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+/* Custom bullet points */
+.simpleList li::marker {
+  color: var(--color-secondary);
+  font-size: 1.2em;
+}
+
+/* Definition List for Terms - Clean Split Layout */
+.definitionList {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  /* Fixed width title, fluid content */
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: start;
+  /* Aligns text to top */
+}
+
+.definitionList dt {
+  font-weight: 800;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  text-align: right;
+  padding-top: 1rem;
+  /* Visual alignment with dd box */
+  position: relative;
+  grid-column: 1;
+}
+
+.definitionList dd {
+  grid-column: 2;
+  margin-left: 0;
+  line-height: 1.6;
+  background: white;
+  padding: 1.5rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  width: 100%;
-  height: auto;
-}
-
-.contentSection figcaption {
-  text-align: center;
-  margin-top: var(--spacing-sm);
+  border-left: 5px solid var(--color-secondary);
+  transition: transform 0.2s;
   color: var(--color-text-secondary);
-  font-style: italic;
 }
 
-/* Responsive design */
+.definitionList dd:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+  .definitionList {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .definitionList dt {
+    text-align: left;
+    padding-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .contentSection {
-    padding: var(--spacing-lg);
+    padding: 2rem;
   }
-  
+
   .sectionTitle {
-    font-size: var(--font-size-xl);
+    font-size: 1.5rem;
   }
 }

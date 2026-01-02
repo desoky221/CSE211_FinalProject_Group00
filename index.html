@@ -1,313 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="EventsX: The official dynamic event planner for EduConnect. Browse, filter, and register for campus workshops and seminars."
-    >
-    <meta
-      name="keywords"
-      content="EventsX, EduConnect, event planner, student workshops, campus seminars, event registration"
-    >
-    <meta name="author" content="Your Full Name">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>EventsX Home - EduConnect</title>
-  </head>
 
-  <body id="homePage">
-    <!-- ========== HEADER SECTION ========== -->
-    <header id="siteHeader" class="header">
-      <div id="brandSection" class="brand">
-        <a href="index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
-          <img
-            src="images/1png.png"
-            alt="EventsX logo"
-            id="logoImage"
-            class="logoImg"
-          >
-        </a>
-        <h1 id="siteTitle" class="titleText">EventsX</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventX - Discover Premier Campus Events</title>
+  <meta name="description"
+    content="Join EventX for top-tier workshops, seminars, and networking events. Elevate your skills and career.">
+  <!-- Using common.css as requested -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body id="homePage">
+
+  <!-- ========== HEADER SECTION (LEGACY STRUCTURE) ========== -->
+  <header id="siteHeader" class="header">
+    <div id="brandSection" class="brand">
+      <a href="index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
+        <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
+      </a>
+      <h1 id="siteTitle" class="titleText">EventsX</h1>
+    </div>
+
+    <nav id="mainNavigation" class="navBar" aria-label="Primary">
+      <ul id="navList" class="navList">
+        <li class="navItem"><a href="index.html" class="navLink active" title="Home">Home</a></li>
+        <li class="navItem"><a href="pages/about.html" class="navLink" title="About EduConnect">About Us</a></li>
+        <li class="navItem"><a href="pages/events.html" class="navLink" title="Browse course catalog">Course Catalog</a>
+        </li>
+        <li class="navItem"><a href="pages/student-dashboard.html" class="navLink"
+            title="Open student dashboard">Dashboard</a></li>
+        <li class="navItem"><a href="pages/registration.html" class="navLink"
+            title="Register for an event">Registration</a></li>
+        <li class="navItem"><a href="pages/contact.html" class="navLink" title="Contact us">Contact</a></li>
+        <li class="navItem">
+          <a href="https://www.gu.edu.eg/" class="navLink btn-highlight" target="_blank">Galala Univ</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- ========== END HEADER ========= -->
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2 class="hero-title">
+        Shape Your Future with <br>
+        <span class="text-gradient">EventX Workshops</span>
+      </h2>
+      <p class="hero-subtitle">
+        Connect, learn, and grow with industry-leading seminars and hands-on technical sprints designed for students.
+      </p>
+      <div class="hero-actions">
+        <a href="pages/events.html" class="btn btn-primary">Browse Events</a>
+        <a href="pages/registration.html" class="btn btn-outline">Register Now</a>
       </div>
+    </div>
+  </section>
 
-      <!-- ========== MAIN NAVIGATION ========== -->
-      <nav id="mainNavigation" class="navBar" aria-label="Primary">
-        <ul id="navList" class="navList">
-          <li class="navItem"><a href="index.html" id="navHome" class="navLink" title="Home">Home</a></li>
-          <li class="navItem"><a href="pages/about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a></li>
-          <li class="navItem"><a href="pages/events.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
-          <li class="navItem"><a href="pages/student-dashboard.html" id="navDashboard" class="navLink" title="Open student dashboard">Student Dashboard</a></li>
-          <li class="navItem"><a href="pages/registration.html" id="navRegister" class="navLink" title="Register for an event">Registration</a></li>
-          <li class="navItem"><a href="pages/contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a></li>
-          <li class="navItem">
-            <a
-              href="https://www.gu.edu.eg/"
-              id="GalalaUniversityLink"
-              class="navLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit University Website"
-            >Galala University</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- ========== END MAIN NAVIGATION ========== -->
-    </header>
-    <!-- ========== END HEADER ========= -->
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="mainContent" class="main-wrapper">
+    <div class="dashboard-grid"> <!-- Using grid layout -->
 
-    <!-- ========== MAIN SECTION ========== -->
-    <main id="mainContent" class="mainBox">
-      <header id="mainHeader" class="mainHeaderBox">
-        <h2 id="mainHeading" class="mainTitle">
-          Discover &amp; Plan Upcoming Events
-        </h2>
-      </header>
+      <!-- LEFT COLUMN: Featured Events -->
+      <section class="events-feed">
+        <div class="section-header">
+          <h2>Featured Workshops</h2>
+          <a href="pages/events.html" class="view-all">View All &rarr;</a>
+        </div>
 
-      <!-- Two-column layout without CSS:
-           Left column is the primary content sections; right column is an aside for filters/search -->
-      <section class="content-columns" aria-label="Homepage content columns">
-        <!-- ========== LEFT COLUMN: EVENT LISTINGS ========== -->
-        <section class="event-listings" aria-label="Event listings">
-          <!-- 3 Workshops in a Row -->
-          <div class="workshops-row">
-            <article id="eventWebDesign" class="eventBox workshop-card">
-            <figure class="mediaBox">
-              <img
-                src="images/study1.jpeg"
-                alt="Students collaborating on laptops during a workshop"
-              >
-              <figcaption>Collaborative learning during our monthly Tech Sprints.</figcaption>
-            </figure>
-
-            <div>
-              <h4 class="eventTitle">Full-Stack Dev Workshop</h4>
-              <p class="eventText">
-               Master the art of building responsive web applications with EventsX.
-                <time datetime="2026-01-10">January 10, 2026</time>
-              </p>
-
-              <ol class="numberList">
-                <li>Register through the Registration portal.</li>
-                <li>Bring your laptop.</li>
-                <li>Arrive 15 minutes early.</li>
-              </ol>
-
-              <p>
-                <a href="pages/events.html" id="eventsLink" class="textLink">View full event schedule</a>
-              </p>
+        <div class="cards-grid">
+          <!-- Event Card 1 -->
+          <article class="event-card">
+            <div class="card-media">
+              <img src="images/study1.jpeg" alt="Students coding">
+              <div class="card-badge">Tech</div>
             </div>
-            </article>
-
-            <article id="eventML" class="eventBox workshop-card">
-            <figure class="mediaBox">
-              <img
-                src="images/machine learning.jpg"
-                alt="Machine learning and AI workshop session"
-              >
-              <figcaption>Explore AI and ML concepts.</figcaption>
-            </figure>
-
-            <div>
-              <h4 class="eventTitle">Machine Learning Workshop</h4>
-              <p class="eventText">
-                Dive into AI fundamentals and learn to build intelligent systems.
-                <time datetime="2026-03-15">March 15, 2026</time>
-              </p>
-
-              <ol class="numberList">
-                <li>Basic Python knowledge required.</li>
-                <li>Bring laptop with Jupyter Notebook.</li>
-                <li>Hands-on projects with real datasets.</li>
-              </ol>
-
-              <p>
-                <a href="pages/events.html" class="textLink">Register for ML Workshop</a>
-              </p>
-            </div>
-            </article>
-
-            <article id="eventDataAnalysis" class="eventBox workshop-card">
-            <figure class="mediaBox">
-              <img
-                src="images/data analysis.jpg"
-                alt="Data analysis and visualization workshop"
-              >
-              <figcaption>Transform data into insights.</figcaption>
-            </figure>
-
-            <div>
-              <h4 class="eventTitle">Data Analysis Fundamentals</h4>
-              <p class="eventText">
-                Master data visualization and statistical analysis using modern tools.
-                <time datetime="2026-04-20">April 20, 2026</time>
-              </p>
-
-              <ol class="numberList">
-                <li>Learn Excel, Python, and Tableau.</li>
-                <li>Work with real business datasets.</li>
-                <li>Create professional dashboards.</li>
-              </ol>
-
-              <p>
-                <a href="pages/events.html" class="textLink">Register for Data Analysis</a>
-              </p>
-            </div>
-            </article>
-          </div>
-          <!-- End Workshops Row -->
-
-          <!-- Career Prep Seminar - Full Width Below -->
-          <article id="eventCareer" class="eventBox career-seminar">
-            <figure class="mediaBox">
-              <video src="videos/video.mp4" controls></video>
-              <figcaption>Career seminar promo video.</figcaption>
-            </figure>
-
-            <div>
-              <h4 class="eventTitle">Career Prep Seminar</h4>
-              <p class="eventText">
-                CV tips and interview practice.
-                <time datetime="2026-02-05">February 5, 2026</time>
-              </p>
-
-              <p>
-                <a href="pages/events.html" class="textLink">Learn more about career prep</a>
-              </p>
+            <div class="card-body">
+              <time class="card-date">Jan 10, 2026</time>
+              <h3 class="card-title">Full-Stack Dev Sprint</h3>
+              <p class="card-desc">Master responsive web apps in this intensive weekend sprint.</p>
+              <a href="pages/events.html" class="btn-text">Details &rarr;</a>
             </div>
           </article>
-          <!-- End Career Seminar -->
 
-          <!-- Definition list requirement -->
-          <section aria-label="Event terminology">
-            <h3>Event Terms</h3>
-            <dl>
-              <dt>Dynamic Filtering</dt>
-              <dd>The ability to sort events by category and cost instantly.</dd>
-              <dt>Budget Calculator</dt>
-              <dd>An internal tool to estimate your travel and attendance fees.</dd>
-              <dt>Seminar</dt>
-              <dd>Lecture with Q&amp;A.</dd>
-              <dt>Networking</dt>
-              <dd>Professional connections.</dd>
-            </dl>
-          </section>
-        </section>
+          <!-- Event Card 2 -->
+          <article class="event-card">
+            <div class="card-media">
+              <img src="images/machine learning.jpg" alt="AI Workshop">
+              <div class="card-badge">AI & ML</div>
+            </div>
+            <div class="card-body">
+              <time class="card-date">Mar 15, 2026</time>
+              <h3 class="card-title">Machine Learning Basics</h3>
+              <p class="card-desc">Build intelligent systems with Python. Notebooks provided.</p>
+              <a href="pages/events.html" class="btn-text">Details &rarr;</a>
+            </div>
+          </article>
 
-        <!-- ========== RIGHT COLUMN: SEARCH / FILTER OPTIONS ========== -->
-        <aside class="search-filter-sidebar" aria-label="Search and filter options">
-          <h3>Search &amp; Filter</h3>
+          <!-- Event Card 3 -->
+          <article class="event-card">
+            <div class="card-media">
+              <img src="images/data analysis.jpg" alt="Data Analysis">
+              <div class="card-badge">Data</div>
+            </div>
+            <div class="card-body">
+              <time class="card-date">Apr 20, 2026</time>
+              <h3 class="card-title">Data Analytics Pro</h3>
+              <p class="card-desc">Visualize insights using Tableau and Python libraries.</p>
+              <a href="pages/events.html" class="btn-text">Details &rarr;</a>
+            </div>
+          </article>
+        </div>
 
-          <form action="pages/events.html" id="filterForm">
-            <fieldset>
-              <legend>Find an Event</legend>
+        <!-- Featured Wide Card -->
+        <article class="feature-highlight">
+          <div class="highlight-content">
+            <h3>Career Prep Seminar</h3>
+            <p>Get ready for interview season with expert CV reviews.</p>
+            <a href="pages/events.html" class="btn btn-secondary">Learn More</a>
+          </div>
+          <div class="highlight-media">
+            <video src="videos/video.mp4" controls></video>
+          </div>
+        </article>
+      </section>
 
-              <label for="searchInput"> Keyword</label>
-              <input type="search" id="searchInput" name="q">
-
-              <label for="typeSelect">Event Category </label>
-              <select id="typeSelect" name="type">
-                <option value="">Any</option>
-                <option value="workshop">Technical Workshop</option>
-                <option value="seminar">Academic Seminar</option>
-                <option value="networking">Professional Networking</option>
+      <!-- RIGHT COLUMN: Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-widget filter-widget">
+          <h3>Find Your Event</h3>
+          <form action="pages/events.html" class="filter-form">
+            <div class="form-group">
+              <label>Keyword</label>
+              <input type="text" placeholder="e.g. Python">
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <select>
+                <option>All Categories</option>
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Networking</option>
               </select>
-
-              <label for="costInput">Max Cost</label>
-              <input type="number" id="costInput" name="maxCost">
-
-              <button type="submit" id="applyBtn">Apply</button>
-              <button type="reset" id="resetBtn">Reset</button>
-            </fieldset>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
           </form>
+        </div>
 
-          <section aria-label="Quick links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="pages/registration.html" title="Go to registration form">Register now</a></li>
-              <li><a href="pages/budget-calculator.html" title="Estimate your event budget">Budget calculator</a></li>
-              <li><a href="pages/contact.html" title="Contact details">Contact</a></li>
-            </ul>
-          </section>
-        </aside>
-      </section>
-    </main>
-    <!-- ========== END MAIN SECTION ========== -->
-
-    <!-- ========== FOOTER SECTION ========== -->
-    <footer id="siteFooter" class="footer">
-      <div id="footerContent" class="footerContent">
-        <section id="footerLinksSection" class="footerSection">
-          <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
-          <ul id="footerLinksList" class="footerList">
-            <li><a href="pages/about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a></li>
-            <li><a href="pages/contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a></li>
-            <li><a href="pages/privacy.html" id="footerPrivacy" class="footerLink" title="Privacy policy placeholder">Privacy Policy</a></li>
-            <li><a href="pages/terms.html" id="footerTerms" class="footerLink" title="Terms of service placeholder">Terms of Service</a></li>
+        <div class="sidebar-widget quick-links">
+          <h3>Quick Access</h3>
+          <ul class="link-list">
+            <li><a href="pages/budget-calculator.html">💰 Budget Calculator</a></li>
+            <li><a href="pages/contact.html">📞 Contact Support</a></li>
+            <li><a href="pages/registration.html">📝 Register Now</a></li>
           </ul>
-        </section>
+        </div>
+      </aside>
 
-        <section id="footerContactSection" class="footerSection">
-          <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
-          <address id="footerAddress" class="address">
-            Email:
-            <a
-              href="mailto:contact@educonnect.example"
-              id="footerEmail"
-              class="footerLink"
-              title="Send us an email"
-            >contact@educonnect.example</a>
-          </address>
-        </section>
+    </div>
+  </main>
 
-        <section id="footerSocialSection" class="footerSection">
-          <h4 id="footerSocialTitle" class="footerTitle">Social</h4>
-          <ul id="footerSocialList" class="footerList">
-            <li>
-              <a
-                href="https://www.linkedin.com"
-                id="footerLinkedIn"
-                class="footerLink"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
-              >LinkedIn</a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com"
-                id="footerFacebook"
-                class="footerLink"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Facebook"
-              >Facebook</a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com"
-                id="footerTwitter"
-                class="footerLink"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Twitter"
-              >Twitter</a>
-            </li>
-          </ul>
-        </section>
-      </div>
-
-      <section id="footerInfo" class="footerInfo">
-        <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
-        <p id="updatedText" class="footerText">
-          Last Updated:
-          <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
-            December 29, 2025
-          </time>
-        </p>
+  <!-- ========== FOOTER SECTION (LEGACY STRUCTURE) ========== -->
+  <footer id="siteFooter" class="footer">
+    <div id="footerContent" class="footerContent">
+      <section id="footerLinksSection" class="footerSection">
+        <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
+        <ul id="footerLinksList" class="footerList">
+          <li><a href="pages/about.html" class="footerLink" title="About EduConnect">About Us</a></li>
+          <li><a href="pages/contact.html" class="footerLink" title="Contact page">Contact</a></li>
+          <li><a href="pages/privacy.html" class="footerLink" title="Privacy policy placeholder">Privacy Policy</a></li>
+          <li><a href="pages/terms.html" class="footerLink" title="Terms of service placeholder">Terms of Service</a>
+          </li>
+        </ul>
       </section>
-    </footer>
-    <!-- ========== END FOOTER ========= -->
-  </body>
+
+      <section id="footerContactSection" class="footerSection">
+        <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
+        <address id="footerAddress" class="address">
+          Email:
+          <a href="mailto:contact@educonnect.example" class="footerLink">contact@educonnect.example</a>
+        </address>
+      </section>
+
+      <section id="footerSocialSection" class="footerSection">
+        <h4 id="footerSocialTitle" class="footerTitle">Social</h4>
+        <ul id="footerSocialList" class="footerList">
+          <li><a href="https://www.linkedin.com" class="footerLink" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com" class="footerLink" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com" class="footerLink" target="_blank">Twitter</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="footerInfo" class="footerInfo">
+      <p id="copyrightText" class="footerText">&copy; 2026 EventX. All rights reserved.</p>
+      <p class="footerText">Designed for Excellence.</p>
+    </section>
+  </footer>
+  <!-- ========== END FOOTER ========= -->
+
+</body>
+
 </html>

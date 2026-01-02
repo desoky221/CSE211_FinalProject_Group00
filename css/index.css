@@ -1,390 +1,430 @@
 /*
-ID & Name:    [Your ID & Full Name]
-Course:       CSE211 Web Programming
-Assignment:   Course Project
-Date:         2025/12/30
-Description:  Index page specific styles.
-              Homepage layout and event listings styling.
+ID & Name:    [Refactored by EventX Assistant]
+Description:  Home page specific styles (index.css).
+              Features a stunning hero section, card grids, and interactive elements.
 */
 
-/* Main Header - Center aligned */
-.mainHeaderBox {
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    color: white;
+    padding: 6rem 1rem;
+    text-align: center;
+    border-radius: 0 0 50% 50% / 4rem;
+    /* Curved bottom */
+    margin-bottom: 4rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
 }
 
-.mainHeaderBox .mainTitle {
-  text-align: center;
+/* Background Pattern/Effect */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 150%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% -50%, rgba(74, 155, 142, 0.15) 0%, transparent 50%);
+    pointer-events: none;
 }
 
-/* Content Layout */
-.content-columns {
-  display: flex;
-  gap: var(--spacing-2xl);
-  margin-top: var(--spacing-xl);
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeUp 0.8s ease-out;
 }
 
-.event-listings {
-  flex: 1;
-  min-width: 0;
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
 }
 
-/* Search Filter Sidebar */
-.search-filter-sidebar {
-  flex: 0 0 350px;
-  background: var(--color-bg-secondary);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  align-self: flex-start;
-  min-width: 320px;
-  border: 1px solid var(--color-border-light);
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Search Form Styling */
-.search-filter-sidebar fieldset {
-  border: 2px solid var(--color-primary);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.search-filter-sidebar legend {
-  color: var(--color-primary);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
+/* Gradient Text Modifier */
+.text-gradient {
+    background: linear-gradient(to right, #4a9b8e, #d4a574);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.search-filter-sidebar label {
-  display: block;
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-  color: var(--color-text-primary);
+/* ============================================
+   MAIN CONTENT WRAPPER
+   ============================================ */
+.main-wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
 }
 
-.search-filter-sidebar label:first-of-type {
-  margin-top: 0;
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 3rem;
 }
 
-.search-filter-sidebar input,
-.search-filter-sidebar select {
-  width: 100%;
-  max-width: 100%;
-  padding: var(--spacing-md);
-  font-size: var(--font-size-base);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-base);
+/* ============================================
+   EVENTS SECTION
+   ============================================ */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-border-light);
+    padding-bottom: 1rem;
 }
 
-.search-filter-sidebar input:focus,
-.search-filter-sidebar select:focus {
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.15);
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin: 0;
+    position: relative;
 }
 
-.search-filter-sidebar button {
-  width: 100%;
-  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
-  padding: var(--spacing-md);
-  font-size: var(--font-size-lg);
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    /* Aligns with border-bottom */
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--color-secondary);
 }
 
-.search-filter-sidebar button[type="submit"] {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  color: var(--color-text-inverse);
+.view-all {
+    font-weight: 600;
+    color: var(--color-secondary);
+    transition: transform 0.2s;
 }
 
-.search-filter-sidebar button[type="submit"]:hover {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+.view-all:hover {
+    transform: translateX(5px);
+    color: var(--color-primary);
 }
 
-.search-filter-sidebar button[type="reset"] {
-  background-color: var(--color-text-light);
-  color: var(--color-text-inverse);
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-.search-filter-sidebar button[type="reset"]:hover {
-  background-color: var(--color-text-secondary);
-}
-
-/* Quick Links in Sidebar */
-.search-filter-sidebar section {
-  margin-top: var(--spacing-xl);
-  padding-top: var(--spacing-xl);
-  border-top: 2px solid var(--color-border);
-}
-
-.search-filter-sidebar section h4 {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
-  font-weight: var(--font-weight-semibold);
-}
-
-.search-filter-sidebar section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.search-filter-sidebar section li {
-  margin-bottom: var(--spacing-md);
-  margin-left: 0;
-}
-
-.search-filter-sidebar section a {
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  transition: all var(--transition-base);
-  display: inline-block;
-  padding: var(--spacing-xs) 0;
-  position: relative;
-  padding-left: var(--spacing-lg);
-}
-
-.search-filter-sidebar section a::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  transition: transform var(--transition-base);
-}
-
-.search-filter-sidebar section a:hover {
-  color: var(--color-secondary);
-  transform: translateX(3px);
-}
-
-.search-filter-sidebar section a:hover::before {
-  transform: translateX(3px);
-}
-
-/* ===== WORKSHOPS ROW - 3 CARDS SIDE BY SIDE ===== */
-.workshops-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-2xl);
-}
-
-/* Workshop Cards - VERTICAL LAYOUT (Image top, content below) */
-.workshop-card {
-  display: flex;
-  flex-direction: column;
-  border-left: 4px solid var(--color-secondary);
-  transition: all var(--transition-base);
-  padding: var(--spacing-lg);
-  background-color: var(--color-bg-secondary);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  height: 100%;
-}
-
-.workshop-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-left-color: var(--color-primary);
-}
-
-/* Workshop Card Images - Top of Card */
-.workshop-card .mediaBox,
-.workshop-card figure {
-  width: 100%;
-  margin: 0 0 var(--spacing-md) 0;
-  order: 0;
-}
-
-.workshop-card .mediaBox img,
-.workshop-card figure img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-}
-
-.workshop-card figcaption {
-  text-align: center;
-  font-size: var(--font-size-sm);
-  margin-top: var(--spacing-xs);
-}
-
-/* Workshop Card Content */
-.workshop-card > div {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.workshop-card .numberList {
-  font-size: var(--font-size-sm);
-  padding-left: var(--spacing-lg);
-  margin: var(--spacing-sm) 0;
-}
-
-.workshop-card .numberList li {
-  margin-bottom: var(--spacing-xs);
-}
-
-.workshop-card .textLink {
-  font-size: var(--font-size-sm);
-  padding: var(--spacing-sm) var(--spacing-md);
-}
-
-/* ===== CAREER SEMINAR - FULL WIDTH BELOW ===== */
-.career-seminar {
-  display: flex;
-  gap: var(--spacing-xl);
-  align-items: flex-start;
-  border-left: 4px solid var(--color-accent);
-  transition: all var(--transition-base);
-  padding: var(--spacing-xl);
-  background-color: var(--color-bg-secondary);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  margin-bottom: var(--spacing-xl);
-}
-
-.career-seminar:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-left-color: var(--color-primary);
-}
-
-/* Career Seminar Video - Left Side */
-.career-seminar .mediaBox,
-.career-seminar figure {
-  flex-shrink: 0;
-  width: 380px;
-  margin: 0;
-}
-
-.career-seminar video {
-  width: 380px;
-  height: 240px;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-}
-
-.career-seminar figcaption {
-  text-align: center;
-  margin-top: var(--spacing-xs);
-}
-
-/* Career Seminar Content - Right Side */
-.career-seminar > div {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.event-listings .eventTitle {
-  color: var(--color-primary);
-  font-size: var(--font-size-2xl);
-  margin-top: 0;
-  margin-bottom: var(--spacing-md);
-}
-
-.event-listings .eventText {
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-md);
-}
-
-.event-listings time {
-  color: var(--color-secondary);
-  font-weight: var(--font-weight-medium);
-}
-
-/* Ordered Lists in Events */
-.event-listings .numberList {
-  margin: var(--spacing-md) 0;
-  padding-left: var(--spacing-xl);
-}
-
-.event-listings .numberList li {
-  margin-bottom: var(--spacing-sm);
-}
-
-/* Event Links */
-.event-listings .textLink {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: var(--color-text-inverse);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  font-weight: var(--font-weight-semibold);
-  transition: all var(--transition-base);
-  margin-top: var(--spacing-sm);
-}
-
-.event-listings .textLink:hover {
-  background-color: var(--color-accent);
-  transform: translateX(5px);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  /* 2 columns on medium screens */
-  .workshops-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
-  .content-columns {
+/* Event Card */
+.event-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border-light);
+    display: flex;
     flex-direction: column;
-  }
-  
-  .search-filter-sidebar {
-    order: -1;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-media {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-media img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .card-media img {
+    transform: scale(1.1);
+}
+
+.card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 1.5rem;
     flex: 1;
-    min-width: 100%;
-  }
-  
-  /* 1 column on smaller tablets */
-  .workshops-row {
-    grid-template-columns: 1fr;
-  }
+    display: flex;
+    flex-direction: column;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+}
+
+.card-desc {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    flex: 1;
+    /* Pushes button to bottom */
+}
+
+.btn-text {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.btn-text:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+/* Start Feature Highlight (Wide Card) */
+.feature-highlight {
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.feature-highlight::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.highlight-content {
+    flex: 1;
+    z-index: 1;
+}
+
+.highlight-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.highlight-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.highlight-media {
+    flex: 1;
+    max-width: 450px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+.highlight-media video {
+    width: 100%;
+    display: block;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    /* Below header */
+    height: fit-content;
+}
+
+.sidebar-widget {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-light);
+}
+
+.sidebar-widget h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border-light);
+    padding-bottom: 0.75rem;
+}
+
+/* Filter Forms */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    background: white;
+    color: var(--color-text-primary);
+    transition: all 0.2s;
+    appearance: none;
+    /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* Custom Select Arrow */
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231e3a5f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    padding-right: 3rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.form-group select:hover {
+    border-color: var(--color-secondary);
+    background-color: #fafafc;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 4px rgba(74, 155, 142, 0.1);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Quick Links */
+.link-list li {
+    margin-bottom: 0.75rem;
+}
+
+.link-list a {
+    display: block;
+    padding: 0.75rem;
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.link-list a:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-highlight {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .highlight-media {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-  .search-filter-sidebar {
-    padding: var(--spacing-lg);
-  }
-  
-  /* Stack everything vertically on mobile */
-  .workshops-row {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-  }
-  
-  .workshop-card {
-    padding: var(--spacing-md);
-  }
-  
-  .workshop-card .mediaBox img,
-  .workshop-card figure img {
-    height: 160px;
-  }
-  
-  /* Career seminar stacks on mobile */
-  .career-seminar {
-    flex-direction: column;
-    padding: var(--spacing-lg);
-  }
-  
-  .career-seminar .mediaBox,
-  .career-seminar figure {
-    width: 100%;
-  }
-  
-  .career-seminar video {
-    width: 100%;
-    height: auto;
-  }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-section {
+        border-radius: 0 0 2rem 2rem;
+        padding: 4rem 1rem;
+    }
 }
-
-

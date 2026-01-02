@@ -1,221 +1,276 @@
-/*
-ID & Name:    [Your ID & Full Name]
-Course:       CSE211 Web Programming
-Assignment:   Course Project
-Date:         2025/12/30
-Description:  Events page specific styles.
-              Enhanced table styling and event information display.
+/* 
+   Events Page - High End Refactor
+   Features: Beautiful data grid table, interactive gallery, and clean typography.
 */
 
-/* Events table section */
-#tableSection {
-  margin-bottom: var(--spacing-2xl);
+.main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
 }
 
-#tableSection h3 {
+/* ============================================
+   TABLE STYLING (The "Schedule")
+   ============================================ */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  /* Allows border-radius */
+  border-spacing: 0;
+  margin: 2rem 0;
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  animation: slideIn 0.8s ease-out;
+}
+
+#tableCaption {
+  caption-side: top;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--color-primary);
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 1rem;
+  text-align: left;
+  padding-left: 0.5rem;
 }
 
-/* Enhanced table styling */
-#eventsTable {
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-border);
+.table thead {
+  background: var(--color-primary);
+  color: white;
 }
 
-#eventsTable caption {
-  font-size: var(--font-size-xl);
-  padding: var(--spacing-md);
-  background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-bg-hover) 100%);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  margin-bottom: 0;
-  color: var(--color-primary);
-  font-weight: var(--font-weight-semibold);
-}
-
-#eventsTable thead th {
-  font-size: var(--font-size-base);
+.table th {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: var(--spacing-lg);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
-#eventsTable tbody td {
-  padding: var(--spacing-lg);
-  font-size: var(--font-size-base);
+.table td {
+  padding: 1.25rem 1.5rem;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s;
 }
 
-/* Alternating row colors */
-#eventsTable tbody tr:nth-child(odd) {
-  background-color: var(--color-bg-tertiary);
+.table tbody tr:last-child td {
+  border-bottom: none;
 }
 
-#eventsTable tbody tr:nth-child(even) {
-  background-color: var(--color-bg-secondary);
+/* Row Hover Effect */
+.table tbody tr:hover td {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  cursor: default;
 }
 
-/* Fix rowspan rows - match the row above them exactly */
-/* The bootcamp row is 7th (odd), so it should be tertiary, but we want it to match row 6 (even/secondary) */
-#eventsTable tbody tr:nth-child(7),
-#eventsTable tbody tr:nth-child(8) {
-  background-color: var(--color-bg-secondary) !important;
+/* Highlighting Costs/Dates */
+.table td:nth-child(2) {
+  /* Date */
+  font-weight: 500;
+  color: var(--color-secondary);
 }
 
-/* Ensure all cells in rowspan rows are transparent so they inherit row background */
-#eventsTable tbody tr:nth-child(7) td,
-#eventsTable tbody tr:nth-child(8) td {
-  background-color: transparent !important;
-  border-color: transparent;
-}
-
-/* Enhanced hover effect */
-#eventsTable tbody tr:hover {
-  background-color: rgba(74, 155, 142, 0.08);
-  transform: scale(1.005);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
-}
-
-/* Event name column styling */
-#eventsTable tbody td:first-child {
-  font-weight: var(--font-weight-semibold);
+.table td:last-child {
+  /* Cost */
+  font-weight: 700;
   color: var(--color-primary);
 }
 
-/* Cost column styling - highlight free events */
-#eventsTable tbody td:last-child {
-  font-weight: var(--font-weight-semibold);
+/* Special Rows */
+.special-header td {
+  background-color: var(--color-bg-primary);
+  color: var(--color-primary);
+  font-weight: 800;
   text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--color-border);
 }
 
-#eventsTable tbody tr:has(td:last-child:contains("Free")) td:last-child {
-  color: var(--color-success);
-  background-color: rgba(74, 155, 142, 0.1);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-sm);
-}
-
-/* Date column styling */
-#eventsTable tbody td:nth-child(2) {
-  color: var(--color-text-secondary);
-}
-
-/* Location column with icon */
-#eventsTable tbody td:nth-child(3)::before {
-  content: "📍 ";
-  margin-right: var(--spacing-xs);
-}
-
-/* Special header row - make it match regular rows */
-/* Special header row - match Python Programming Workshop row (5th row, odd) */
-#eventsTable tbody tr.special-header {
-  background-color: var(--color-bg-tertiary) !important;
-}
-
-#eventsTable tbody tr.special-header td {
-  background-color: transparent !important;
-  text-align: center;
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  font-style: italic;
-}
-
-#eventsTable tbody tr.special-header:hover {
-  background-color: rgba(74, 155, 142, 0.08);
-}
-
-/* Helpful notes section */
+/* ============================================
+   NOTES & STEPS
+   ============================================ */
 #notesSection {
-  background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(212, 165, 116, 0.05) 100%);
-  padding: var(--spacing-2xl);
+  background: white;
+  padding: 2.5rem;
   border-radius: var(--radius-lg);
-  border-left: 5px solid var(--color-accent);
-  margin-bottom: var(--spacing-xl);
-}
-
-#notesSection h3 {
-  color: var(--color-accent);
-  margin-top: 0;
-  margin-bottom: var(--spacing-lg);
-}
-
-#notesSection ol {
-  background-color: var(--color-bg-secondary);
-  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-2xl);
-  border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
+  margin-bottom: 3rem;
 }
 
-#notesSection li {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-md);
-  line-height: var(--line-height-relaxed);
-  color: var(--color-text-secondary);
+.sectionTitle {
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
-#notesSection li:last-child {
-  margin-bottom: 0;
+.numberList {
+  counter-reset: step-counter;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-/* Related media section */
+.numberList li {
+  background: var(--color-bg-primary);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  position: relative;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s;
+}
+
+.numberList li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  /* Centering */
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.numberList li:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   GALLERY
+   ============================================ */
 #gallerySection {
-  background: linear-gradient(135deg, rgba(74, 155, 142, 0.1) 0%, rgba(74, 155, 142, 0.05) 100%);
-  padding: var(--spacing-2xl);
+  margin-top: 4rem;
+}
+
+.mediaSection {
+  margin: 0;
+  position: relative;
   border-radius: var(--radius-lg);
-  border-left: 5px solid var(--color-secondary);
-}
-
-#gallerySection h3 {
-  color: var(--color-secondary);
-  margin-top: 0;
-  margin-bottom: var(--spacing-lg);
-}
-
-#gallerySection figure {
-  margin: 0 auto var(--spacing-lg) auto;
-  max-width: 500px;
-}
-
-#gallerySection img {
-  border-radius: var(--radius-lg);
+  overflow: hidden;
   box-shadow: var(--shadow-lg);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-  max-width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.mediaImg {
+  width: 100%;
   height: auto;
+  display: block;
+  transition: transform 0.6s ease;
 }
 
-#gallerySection img:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-xl);
+.mediaSection:hover .mediaImg {
+  transform: scale(1.05);
 }
 
-#gallerySection figcaption {
+.mediaCaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(30, 58, 95, 0.85);
+  /* Primary color w/ opacity */
+  color: white;
+  padding: 1rem;
   text-align: center;
+  font-size: 0.95rem;
+  backdrop-filter: blur(4px);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
 }
 
-/* Responsive design */
+.mediaSection:hover .mediaCaption {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Table */
 @media (max-width: 768px) {
-  #eventsTable {
-    font-size: var(--font-size-sm);
+  .table thead {
+    display: none;
+    /* Hide headers on mobile */
   }
 
-  #eventsTable thead th,
-  #eventsTable tbody td {
-    padding: var(--spacing-md) var(--spacing-sm);
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
   }
 
-  #eventsTable caption {
-    font-size: var(--font-size-lg);
+  .table tr {
+    margin-bottom: 1.5rem;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
   }
 
-  #notesSection,
-  #gallerySection {
-    padding: var(--spacing-lg);
+  .table td {
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid var(--color-bg-primary);
+    position: relative;
   }
 
-  #notesSection ol {
-    padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-lg) var(--spacing-xl);
+  /* Simulate labels */
+  .table td::before {
+    content: attr(data-label);
+    /* Requires data-label in HTML, but we don't have it. Fallback: */
+    /* Since we can't edit HTML freely, we rely on Clean Layout for mobile row. */
+    float: left;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+  }
+
+  /* Specific overrides since we don't have data-labels */
+  .table td:nth-child(1) {
+    text-align: left;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    background: var(--color-bg-primary);
+  }
+
+  .table td:nth-child(2) {
+    text-align: left;
+    padding-top: 0.5rem;
+  }
+
+  .table td:nth-child(3) {
+    text-align: left;
+  }
+
+  .table td:nth-child(4) {
+    text-align: right;
+    font-size: 1.2rem;
   }
 }
-

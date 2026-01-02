@@ -1,175 +1,181 @@
-/*
-ID & Name:    [Your ID & Full Name]
-Course:       CSE211 Web Programming
-Assignment:   Course Project
-Date:         2025/12/30
-Description:  Contact page specific styles.
-              Enhanced styling for contact information and social media.
+/* 
+   Contact Page - High End Refactor
+   Features: Glassmorphic contact cards, clean grid layout, and styled map container.
 */
 
-/* Contact details section with card layout */
-.contact-details {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  padding: 2.5rem;
-  border-radius: 12px;
-  border-left: 5px solid var(--primary);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-}
-
-.contact-details h3 {
-  color: var(--primary);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
-/* Enhanced address styling */
-.contact-details address {
+.main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
   display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+/* ============================================
+   CONTACT CARD (Details)
+   ============================================ */
+#detailsSection {
+  background: white;
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  animation: zoomIn 0.6s ease-out;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.address {
+  font-style: normal;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.paragraphText {
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.textLink {
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: color 0.2s;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.textLink:hover {
+  color: var(--color-secondary);
+}
+
+/* Definition List (Hours) as a Grid */
+.definitionList {
+  background: var(--color-bg-primary);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.contact-details address p {
-  background-color: var(--white);
-  padding: 1.25rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+.definitionList dt {
+  font-weight: 700;
+  color: var(--color-primary);
+  grid-column: 1;
 }
 
-.contact-details address p::before {
-  content: "📧";
-  font-size: 1.5rem;
-}
-
-.contact-details address p:nth-child(2)::before {
-  content: "📞";
-}
-
-.contact-details address a {
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--primary);
-}
-
-.contact-details address a:hover {
-  color: var(--secondary);
-  text-decoration: underline;
-}
-
-/* Definition list styling for hours */
-.contact-details dl {
-  background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.contact-details dt {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-
-.contact-details dt:first-child {
-  margin-top: 0;
-}
-
-/* Social media section */
-.social-media-links {
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  padding: 2.5rem;
-  border-radius: 12px;
-  border-left: 5px solid var(--accent);
-  margin-bottom: 2rem;
-}
-
-.social-media-links h3 {
-  color: var(--accent);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
-.social-media-links ul {
-  list-style: none;
+.definitionList dd {
   margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  color: var(--color-text-secondary);
+  grid-column: 2;
 }
 
-.social-media-links li {
-  margin: 0;
-}
-
-.social-media-links a {
-  display: inline-block;
-  padding: 0.875rem 1.75rem;
-  background-color: var(--white);
-  color: var(--text-color);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.social-media-links a:hover {
-  background-color: var(--accent);
-  color: var(--white);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(245, 158, 11, 0.3);
-}
-
-/* Contact media section */
-.contact-media {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  padding: 2.5rem;
-  border-radius: 12px;
-  border-left: 5px solid var(--success);
-}
-
-.contact-media h3 {
-  color: var(--success);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
-.contact-media figure {
-  margin: 1.5rem auto;
-  max-width: 500px;
-}
-
-.contact-media img {
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
-  height: auto;
-}
-
-.contact-media figcaption {
+/* ============================================
+   SOCIAL MEDIA (Cards)
+   ============================================ */
+#socialSection {
   text-align: center;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .contact-details,
-  .social-media-links,
-  .contact-media {
-    padding: 1.5rem;
+.simpleList {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.simpleList li {
+  flex: 0 0 auto;
+}
+
+.simpleList a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.simpleList a:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   MAP SECTION
+   ============================================ */
+#visitSection {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#visitSection iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  filter: grayscale(20%);
+  /* Stylish muted map */
+  transition: filter 0.3s;
+}
+
+#visitSection iframe:hover {
+  filter: grayscale(0%);
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
 
-  .social-media-links ul {
-    flex-direction: column;
-  }
-
-  .social-media-links a {
-    display: block;
-    text-align: center;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .definitionList {
+    grid-template-columns: 1fr;
+  }
+
+  .definitionList dt,
+  .definitionList dd {
+    grid-column: 1;
+    text-align: center;
+  }
+
+  .definitionList dd {
+    margin-bottom: 1rem;
+  }
+
+  .simpleList a {
+    width: 100%;
+  }
+}

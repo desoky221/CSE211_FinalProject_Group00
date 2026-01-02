@@ -8,6 +8,7 @@ my github: https://github.com/desoky221/EDUconnect
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +19,10 @@ my github: https://github.com/desoky221/EDUconnect
     <link rel="stylesheet" href="../css/student-dashboard.css">
     <title>Student Dashboard - EduConnect</title>
 </head>
+
 <body>
 
+    <!-- ========== HEADER SECTION ========== -->
     <!-- ========== HEADER SECTION ========== -->
     <header id="siteHeader" class="header">
         <div id="brandSection" class="brand">
@@ -32,24 +35,21 @@ my github: https://github.com/desoky221/EDUconnect
         <nav id="mainNavigation" class="navBar" aria-label="Primary">
             <ul id="navList" class="navList">
                 <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
-                <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a></li>
-                <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
-                <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink" title="Open student dashboard">Student Dashboard</a></li>
-                <li class="navItem"><a href="registration.html" id="navRegister" class="navLink" title="Register for an event">Registration</a></li>
-                <li class="navItem"><a href="contact.html" id="navContact" class="navLink" title="Contact us">Contact Me</a></li>
+                <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About
+                        Us</a></li>
+                <li class="navItem"><a href="events.html" id="navCourses" class="navLink"
+                        title="Browse course catalog">Catalog</a></li>
+                <li class="navItem"><a href="student-dashboard.html" id="navDashboard" class="navLink active"
+                        title="Open student dashboard">Dashboard</a></li>
+                <li class="navItem"><a href="registration.html" id="navRegister" class="navLink"
+                        title="Register for an event">Registration</a></li>
+                <li class="navItem"><a href="contact.html" id="navContact" class="navLink"
+                        title="Contact us">Contact</a></li>
                 <li class="navItem">
-                  <a
-                    href="https://www.gu.edu.eg/"
-                    id="GalalaUniversityLink"
-                    class="navLink"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Visit University Website"
-                  >Galala University</a>
+                    <a href="https://www.gu.edu.eg/" class="navLink" target="_blank">Galala Univ</a>
                 </li>
             </ul>
         </nav>
-        <!-- ========== END MAIN NAVIGATION ========== -->
     </header>
     <!-- ========== END HEADER ========= -->
 
@@ -67,14 +67,26 @@ my github: https://github.com/desoky221/EDUconnect
         <header id="pageHeader" class="pageHeader">
             <h2 id="pageTitle" class="pageTitleText">Welcome back, student</h2>
 
-   
 
-            <dl id="quickStats" class="statsOverview">
-                <dt>Total Courses:</dt> <dd>4</dd>
-                <dt>Completed:</dt> <dd>1</dd>
-                <dt>In Progress:</dt> <dd>3</dd>
-                <dt>Certificates:</dt> <dd>1</dd>
-            </dl>
+
+            <div id="quickStats" class="stats-container">
+                <div class="stat-card glass-panel">
+                    <span class="stat-label">Total Courses</span>
+                    <span class="stat-value">4</span>
+                </div>
+                <div class="stat-card glass-panel">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value">1</span>
+                </div>
+                <div class="stat-card glass-panel">
+                    <span class="stat-label">In Progress</span>
+                    <span class="stat-value">3</span>
+                </div>
+                <div class="stat-card glass-panel">
+                    <span class="stat-label">Certificates</span>
+                    <span class="stat-value">1</span>
+                </div>
+            </div>
         </header>
 
         <div class="dashboard-grid">
@@ -93,7 +105,8 @@ my github: https://github.com/desoky221/EDUconnect
                             <p><strong>Instructor:</strong> Dr. Samy Ghoniemy</p>
                             <p>Progress: 45% Completed</p>
                             <p>Last Accessed: <time datetime="2025-11-27">November 27, 2025</time></p>
-                            <button type="button" class="continue-btn" onclick="window.location.href='events.html'">Continue Learning</button>
+                            <button type="button" class="continue-btn"
+                                onclick="window.location.href='events.html'">Continue Learning</button>
                         </div>
                     </article>
 
@@ -106,7 +119,8 @@ my github: https://github.com/desoky221/EDUconnect
                             <p><strong>Instructor:</strong> Dr. shakir</p>
                             <p>Progress: 12% Completed</p>
                             <p>Last Accessed: <time datetime="2025-11-20">November 20, 2025</time></p>
-                            <button type="button" class="continue-btn" onclick="window.location.href='events.html'">Continue Learning</button>
+                            <button type="button" class="continue-btn"
+                                onclick="window.location.href='events.html'">Continue Learning</button>
                         </div>
                     </article>
 
@@ -119,21 +133,40 @@ my github: https://github.com/desoky221/EDUconnect
                             <p><strong>Instructor:</strong> Dr. Samy Ghoniemy</p>
                             <p>Progress: 88% Completed</p>
                             <p>Last Accessed: <time datetime="2025-11-25">November 25, 2025</time></p>
-                            <button type="button" class="continue-btn" onclick="window.location.href='events.html'">Continue Learning</button>
+                            <button type="button" class="continue-btn"
+                                onclick="window.location.href='events.html'">Continue Learning</button>
                         </div>
                     </article>
                 </section>
 
                 <section id="progress-statistics">
                     <h2>Overall Statistics</h2>
-                    <dl>
-                        <dt>Courses Completed:</dt> <dd>1</dd>
-                        <dt>Courses In Progress:</dt> <dd>3</dd>
-                        <dt>Total Learning Hours:</dt> <dd>45 Hours</dd>
-                        <dt>Certificates Earned:</dt> <dd>1</dd>
-                        <dt>Average Quiz Score:</dt> <dd>85%</dd>
-                        <dt>Current Streak:</dt> <dd>5 Days</dd>
-                    </dl>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-title">Courses Completed</span>
+                            <span class="stat-number">1</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-title">Courses In Progress</span>
+                            <span class="stat-number">3</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-title">Total Learning Hours</span>
+                            <span class="stat-number">45h</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-title">Certificates Earned</span>
+                            <span class="stat-number">1</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-title">Average Quiz Score</span>
+                            <span class="stat-number">85%</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-title">Current Streak</span>
+                            <span class="stat-number">5 Days</span>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="upcoming-deadlines">
@@ -289,7 +322,7 @@ my github: https://github.com/desoky221/EDUconnect
                     </table>
                 </section>
 
-<hr>
+                <hr>
                 <nav id="quickLinksNav" aria-label="Quick links">
                     <h3>Quick Links</h3>
                     <ul>
@@ -306,77 +339,60 @@ my github: https://github.com/desoky221/EDUconnect
     <!-- ========== FOOTER SECTION ========== -->
     <footer id="siteFooter" class="footer">
         <div id="footerContent" class="footerContent">
-          <section id="footerLinksSection" class="footerSection">
-            <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
-            <ul id="footerLinksList" class="footerList">
-            <li><a href="about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a></li>
-            <li><a href="contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a></li>
-            <li><a href="privacy.html" id="footerPrivacy" class="footerLink" title="Privacy policy placeholder">Privacy Policy</a></li>
-            <li><a href="terms.html" id="footerTerms" class="footerLink" title="Terms of service placeholder">Terms of Service</a></li>
-            </ul>
-          </section>
-  
-          <section id="footerContactSection" class="footerSection">
-            <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
-            <address id="footerAddress" class="address">
-              Email:
-              <a
-                href="mailto:contact@educonnect.example"
-                id="footerEmail"
-                class="footerLink"
-                title="Send us an email"
-              >contact@educonnect.example</a>
-            </address>
-          </section>
-  
-          <section id="footerSocialSection" class="footerSection">
-            <h4 id="footerSocialTitle" class="footerTitle">Social</h4>
-            <ul id="footerSocialList" class="footerList">
-              <li>
-                <a
-                  href="https://www.linkedin.com"
-                  id="footerLinkedIn"
-                  class="footerLink"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="LinkedIn"
-                >LinkedIn</a>
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com"
-                  id="footerFacebook"
-                  class="footerLink"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Facebook"
-                >Facebook</a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com"
-                  id="footerTwitter"
-                  class="footerLink"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Twitter"
-                >Twitter</a>
-              </li>
-            </ul>
-          </section>
+            <section id="footerLinksSection" class="footerSection">
+                <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
+                <ul id="footerLinksList" class="footerList">
+                    <li><a href="about.html" id="footerAbout" class="footerLink" title="About EduConnect">About Us</a>
+                    </li>
+                    <li><a href="contact.html" id="footerContact" class="footerLink" title="Contact page">Contact</a>
+                    </li>
+                    <li><a href="privacy.html" id="footerPrivacy" class="footerLink"
+                            title="Privacy policy placeholder">Privacy Policy</a></li>
+                    <li><a href="terms.html" id="footerTerms" class="footerLink"
+                            title="Terms of service placeholder">Terms of Service</a></li>
+                </ul>
+            </section>
+
+            <section id="footerContactSection" class="footerSection">
+                <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
+                <address id="footerAddress" class="address">
+                    Email:
+                    <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink"
+                        title="Send us an email">contact@educonnect.example</a>
+                </address>
+            </section>
+
+            <section id="footerSocialSection" class="footerSection">
+                <h4 id="footerSocialTitle" class="footerTitle">Social</h4>
+                <ul id="footerSocialList" class="footerList">
+                    <li>
+                        <a href="https://www.linkedin.com" id="footerLinkedIn" class="footerLink" target="_blank"
+                            rel="noopener noreferrer" title="LinkedIn">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com" id="footerFacebook" class="footerLink" target="_blank"
+                            rel="noopener noreferrer" title="Facebook">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com" id="footerTwitter" class="footerLink" target="_blank"
+                            rel="noopener noreferrer" title="Twitter">Twitter</a>
+                    </li>
+                </ul>
+            </section>
         </div>
-  
+
         <section id="footerInfo" class="footerInfo">
-          <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
-          <p id="updatedText" class="footerText">
-            Last Updated:
-            <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
-              December 29, 2025
-            </time>
-          </p>
+            <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
+            <p id="updatedText" class="footerText">
+                Last Updated:
+                <time datetime="2025-12-29" id="lastUpdated" class="timeText" title="Last updated date">
+                    December 29, 2025
+                </time>
+            </p>
         </section>
-      </footer>
+    </footer>
     <!-- ========== END FOOTER ========= -->
 
 </body>
+
 </html>

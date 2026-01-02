@@ -1,103 +1,62 @@
-/* ==========================================
-   TERMS OF SERVICE PAGE SPECIFIC STYLES
-   ==========================================
-   Only unique styles for terms.html
-   Common styles are in common.css
-   ========================================== */
+/*
+ID & Name:    [Refactored by EventX Assistant]
+Description:  Terms of Service page specific styles.
+              Aligned with Global Design System.
+*/
 
-/* Terms Page Specific Styles */
+/* Content Container */
 #termsPage main {
-    max-width: 900px;
-    margin: 2rem auto;
+    max-width: 800px;
+    margin: 3rem auto;
 }
 
-/* Section Styling - Only for main content sections, not footer */
+/* Section Styling */
 #termsPage main section {
-    background-color: #ffffff;
-    border-left: 4px solid #764ba2;
-    padding: 2rem;
+    background-color: var(--color-bg-secondary);
+    border-left: 4px solid var(--color-secondary);
+    /* Soft Teal for Terms */
+    padding: 2.5rem;
     margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-light);
 }
 
 #termsPage main section h2 {
-    color: #764ba2;
-    font-size: 1.75rem;
+    color: var(--color-secondary-dark);
+    font-size: 1.5rem;
     margin-top: 0;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: 1.5rem;
 }
 
 #termsPage main section h3 {
-    color: #555;
-    font-size: 1.25rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-top: 2rem;
 }
 
-/* List Styling */
-#termsPage ul,
-#termsPage ol {
-    line-height: 1.8;
-    color: #555;
-    padding-left: 1.5rem;
-}
-
+/* Typography */
+#termsPage p,
 #termsPage li {
-    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
 }
 
-#termsPage li strong {
-    color: #333;
-}
-
-/* Nested Lists */
-#termsPage ol ol {
-    list-style-type: lower-alpha;
-    margin-top: 0.5rem;
-}
-
-/* Important Notice Box */
-#termsPage .notice {
-    background-color: #f8d7da;
-    border-left: 4px solid #dc3545;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-radius: 6px;
-}
-
-#termsPage .notice h3 {
-    color: #721c24;
-    margin-top: 0;
-}
-
-#termsPage .notice p {
-    color: #721c24;
-    margin-bottom: 0;
-}
-
-/* Last Updated Date */
-#termsPage .last-updated {
-    background-color: #e7f3ff;
-    border: 1px solid #b3d9ff;
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-style: italic;
-    color: #0056b3;
+#termsPage strong {
+    color: var(--color-primary);
 }
 
 /* Agreement Box */
 #termsPage .agreement-box {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
     color: white;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     margin: 2rem 0;
     text-align: center;
+    box-shadow: var(--shadow-md);
 }
 
 #termsPage .agreement-box h3 {
@@ -106,82 +65,38 @@
 }
 
 #termsPage .agreement-box p {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* Contact Information Highlight */
-#termsPage address {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+/* Important Notice */
+#termsPage .notice {
+    background-color: rgba(200, 93, 93, 0.1);
+    /* Error light */
+    border-left: 4px solid var(--color-error);
     padding: 1.5rem;
-    border-radius: 6px;
-    font-style: normal;
-    line-height: 1.8;
+    border-radius: var(--radius-md);
 }
 
-#termsPage address strong {
-    display: block;
-    color: #764ba2;
-    margin-bottom: 0.5rem;
+#termsPage .notice h3,
+#termsPage .notice p {
+    color: var(--color-error);
+    margin: 0;
 }
 
-/* Paragraphs */
-#termsPage p {
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-/* Definition Terms */
+/* DL styling */
 #termsPage dl {
-    background-color: #f8f9fa;
+    background: var(--color-bg-tertiary);
     padding: 1.5rem;
-    border-radius: 6px;
-    border: 1px solid #dee2e6;
+    border-radius: var(--radius-md);
 }
 
 #termsPage dt {
-    font-weight: bold;
-    color: #764ba2;
+    color: var(--color-primary);
+    font-weight: 700;
     margin-top: 1rem;
 }
 
-#termsPage dt:first-child {
-    margin-top: 0;
-}
-
 #termsPage dd {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     margin-bottom: 1rem;
-    color: #555;
-    line-height: 1.8;
 }
-
-/* Highlight Important Terms */
-#termsPage .important-term {
-    background-color: #fffbcc;
-    padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-    font-weight: 600;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #termsPage main {
-        margin: 1rem auto;
-    }
-
-    #termsPage main section {
-        padding: 1.5rem;
-    }
-
-    #termsPage main section h2 {
-        font-size: 1.5rem;
-    }
-
-    #termsPage .agreement-box {
-        padding: 1.5rem;
-    }
-}
-
