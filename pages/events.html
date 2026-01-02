@@ -63,6 +63,31 @@
       </p>
     </header>
 
+    <section id="filterSection" class="contentSection">
+      <h3 id="filterTitle" class="sectionTitle">Filter Events</h3>
+      <form id="filterForm" class="filter-form">
+        <div class="form-group">
+          <label for="keywordInput">Search Keyword</label>
+          <input type="text" id="keywordInput" placeholder="e.g. Python, Workshop, Seminar">
+        </div>
+        <div class="form-group">
+          <label for="categorySelect">Category</label>
+          <select id="categorySelect">
+            <option value="all">All Categories</option>
+            <option value="workshop">Workshop</option>
+            <option value="seminar">Seminar</option>
+            <option value="networking">Networking</option>
+            <option value="summit">Summit</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="locationInput">Location</label>
+          <input type="text" id="locationInput" placeholder="e.g. Main Campus, Lab A">
+        </div>
+        <button type="button" id="filterButton" class="actionBtn">Filter Events</button>
+      </form>
+    </section>
+
     <section id="tableSection" class="contentSection">
       <h3 id="tableTitle" class="sectionTitle">Event Schedule</h3>
 
@@ -77,37 +102,37 @@
           </tr>
         </thead>
         <tbody id="tableBody">
-          <tr>
+          <tr data-category="workshop">
             <td>Web Design Sprint</td>
             <td><time datetime="2026-01-10">January 10, 2026</time></td>
             <td>Lab A - Main Campus</td>
             <td>$10</td>
           </tr>
-          <tr>
+          <tr data-category="seminar">
             <td>Career Prep Seminar</td>
             <td><time datetime="2026-02-05">February 5, 2026</time></td>
             <td>Auditorium - Building 3</td>
             <td>Free</td>
           </tr>
-          <tr>
+          <tr data-category="seminar">
             <td>Research Poster Day</td>
             <td><time datetime="2026-03-18">March 18, 2026</time></td>
             <td>Hall C - Innovation Center</td>
             <td>$5</td>
           </tr>
-          <tr>
+          <tr data-category="networking">
             <td>Networking Night</td>
             <td><time datetime="2026-04-02">April 2, 2026</time></td>
             <td>Conference Room 2</td>
             <td>$15</td>
           </tr>
-          <tr>
+          <tr data-category="workshop">
             <td>Python Programming Workshop</td>
             <td><time datetime="2026-04-15">April 15, 2026</time></td>
             <td>Computer Lab B</td>
             <td>$12</td>
           </tr>
-          <tr>
+          <tr data-category="summit">
             <td>AI & Machine Learning Summit</td>
             <td><time datetime="2026-05-10">May 10, 2026</time></td>
             <td>Main Auditorium</td>
@@ -119,7 +144,7 @@
               Summer Special Events (Coming Soon)
             </td>
           </tr>
-          <tr>
+          <tr data-category="workshop">
             <td>Entrepreneurship Workshop</td>
             <td><time datetime="2026-07-20">July 20, 2026</time></td>
             <td>Business Center</td>
@@ -205,6 +230,7 @@
     </section>
   </footer>
   <!-- ========== END FOOTER ========= -->
+  <script src="../scripts/event-filter.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,125 @@
 }
 
 /* ============================================
+   FILTER FORM STYLING
+   ============================================ */
+#filterSection {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+}
+
+.filter-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-form input[type="text"],
+.filter-form select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.filter-form input[type="text"]:focus,
+.filter-form select:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+}
+
+.filter-form input[type="text"]::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.filter-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e3a5f' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Button styling for filter form */
+#filterForm .actionBtn {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#filterButton {
+  background: linear-gradient(135deg, var(--color-secondary), #3d8b7d);
+  color: white;
+  box-shadow: 0 4px 15px rgba(74, 155, 142, 0.25);
+}
+
+#filterButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 155, 142, 0.35);
+}
+
+#filterButton:active {
+  transform: translateY(0);
+}
+
+#resetButton {
+  background: white;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+
+#resetButton:hover {
+  background: var(--color-bg-primary);
+  border-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+/* Responsive filter form */
+@media (max-width: 768px) {
+  .filter-form {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  #filterForm .actionBtn {
+    width: 100%;
+  }
+}
+
+/* ============================================
    TABLE STYLING (The "Schedule")
    ============================================ */
 .table {
