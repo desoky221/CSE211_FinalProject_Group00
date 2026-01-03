@@ -92,7 +92,9 @@
 
 .stat-card {
   background: rgba(255, 255, 255, 0.15);
+  /* Standard property first */
   backdrop-filter: blur(12px);
+  /* Vendor prefix for Safari compatibility */
   -webkit-backdrop-filter: blur(12px);
   padding: 1.25rem;
   border-radius: 16px;
@@ -375,10 +377,14 @@ h2::before {
   font-size: 2.5rem;
   font-weight: 800;
   line-height: 1;
-  background: -webkit-linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
+  /* Standard gradient first */
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  /* Standard property first */
   background-clip: text;
+  /* Vendor prefixes for browser compatibility */
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* Sidebar Styling */

@@ -1,9 +1,3 @@
-/*
- * Event Filter JavaScript
- * File: scripts/event-filter.js
- * Description: Simple event filtering by keyword, category, and location
- */
-
 // Wait for the page to fully load before running the script
 window.addEventListener('DOMContentLoaded', function() {
   

@@ -8,8 +8,8 @@
   <meta name="description"
     content="Join EventX for top-tier workshops, seminars, and networking events. Elevate your skills and career.">
   <!-- Using common.css as requested -->
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="pages/css/common.css">
+  <link rel="stylesheet" href="pages/css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
@@ -19,7 +19,7 @@
   <header id="siteHeader" class="header">
     <div id="brandSection" class="brand">
       <a href="index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
-        <img src="images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
+        <img src="pages/images/1png.png" alt="EventsX logo" id="logoImage" class="logoImg">
       </a>
       <h1 id="siteTitle" class="titleText">EventsX</h1>
     </div>
@@ -75,11 +75,11 @@
           <!-- Event Card 1 -->
           <article class="event-card">
             <div class="card-media">
-              <img src="images/study1.jpeg" alt="Students coding">
+              <img src="pages/images/study1.jpeg" alt="Students coding">
               <div class="card-badge">Tech</div>
             </div>
             <div class="card-body">
-              <time class="card-date">Jan 10, 2026</time>
+              <p class="card-date"><time datetime="2026-01-10">January 10, 2026</time></p>
               <h3 class="card-title">Full-Stack Dev Sprint</h3>
               <p class="card-desc">Master responsive web apps in this intensive weekend sprint.</p>
               <a href="pages/events.html" class="btn-text">Details &rarr;</a>
@@ -89,11 +89,11 @@
           <!-- Event Card 2 -->
           <article class="event-card">
             <div class="card-media">
-              <img src="images/machine learning.jpg" alt="AI Workshop">
+              <img src="pages/images/machine%20learning.jpg" alt="AI Workshop">
               <div class="card-badge">AI &amp; ML</div>
             </div>
             <div class="card-body">
-              <time class="card-date">Mar 15, 2026</time>
+              <p class="card-date"><time datetime="2026-03-15">March 15, 2026</time></p>
               <h3 class="card-title">Machine Learning Basics</h3>
               <p class="card-desc">Build intelligent systems with Python. Notebooks provided.</p>
               <a href="pages/events.html" class="btn-text">Details &rarr;</a>
@@ -103,11 +103,11 @@
           <!-- Event Card 3 -->
           <article class="event-card">
             <div class="card-media">
-              <img src="images/data analysis.jpg" alt="Data Analysis">
+              <img src="pages/images/data%20analysis.jpg" alt="Data Analysis">
               <div class="card-badge">Data</div>
             </div>
             <div class="card-body">
-              <time class="card-date">Apr 20, 2026</time>
+              <p class="card-date"><time datetime="2026-04-20">April 20, 2026</time></p>
               <h3 class="card-title">Data Analytics Pro</h3>
               <p class="card-desc">Visualize insights using Tableau and Python libraries.</p>
               <a href="pages/events.html" class="btn-text">Details &rarr;</a>
@@ -117,11 +117,11 @@
           <!-- Event Card 4 -->
           <article class="event-card">
             <div class="card-media">
-              <img src="images/security.jpg" alt="Cybersecurity Workshop">
+              <img src="pages/images/security.jpg" alt="Cybersecurity Workshop">
               <div class="card-badge">Security</div>
             </div>
             <div class="card-body">
-              <time class="card-date">May 15, 2026</time>
+              <p class="card-date"><time datetime="2026-05-15">May 15, 2026</time></p>
               <h3 class="card-title">Cybersecurity Essentials</h3>
               <p class="card-desc">Learn to protect systems and networks from threats.</p>
               <a href="pages/events.html" class="btn-text">Details &rarr;</a>
@@ -137,7 +137,7 @@
             <a href="pages/events.html" class="btn btn-secondary">Learn More</a>
           </div>
           <div class="highlight-media">
-            <video src="videos/video.mp4" controls></video>
+            <video src="pages/videos/video.mp4" controls></video>
           </div>
         </article>
       </section>
@@ -209,10 +209,10 @@
       </section>
     </div>
 
-    <section id="footerInfo" class="footerInfo">
+    <div id="footerInfo" class="footerInfo">
       <p id="copyrightText" class="footerText">&copy; 2026 EventX. All rights reserved.</p>
       <p class="footerText">Designed for Excellence.</p>
-    </section>
+    </div>
   </footer>
   <!-- ========== END FOOTER ========= -->
 

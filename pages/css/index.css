@@ -69,8 +69,10 @@ Description:  Home page specific styles (index.css).
 /* Gradient Text Modifier */
 .text-gradient {
     background: linear-gradient(to right, #4a9b8e, #d4a574);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /* ============================================
@@ -333,8 +335,9 @@ Description:  Home page specific styles (index.css).
     background: white;
     color: var(--color-text-primary);
     transition: all 0.2s;
+    /* Remove default arrow - standard property first */
     appearance: none;
-    /* Remove default arrow */
+    /* Vendor prefixes for browser compatibility */
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;

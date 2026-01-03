@@ -61,6 +61,7 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   line-height: 1.6;
+  /* Font smoothing for better text rendering - vendor prefix only */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -294,7 +295,9 @@ ul {
 /* Global Form Selects (Applied to any .form-select or raw select if needed in future) */
 /* Global Form Selects (Applied to any .form-select or raw select if needed in future) */
 select {
+  /* Standard property first */
   appearance: none;
+  /* Vendor prefixes for browser compatibility */
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100%;
@@ -330,7 +333,7 @@ select:focus {
   box-shadow: 0 0 0 4px rgba(74, 155, 142, 0.15);
 }
 
-/* Hack to hide default arrow in IE/Edge legacy if needed */
+/* Hack to hide default arrow in IE/Edge legacy if needed - Microsoft-specific pseudo-element */
 select::-ms-expand {
   display: none;
 }
@@ -412,6 +415,10 @@ select::-ms-expand {
 /* Text Gradients */
 .text-gradient {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  /* Standard property first */
+  background-clip: text;
+  /* Vendor prefixes for browser compatibility */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
