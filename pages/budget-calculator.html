@@ -12,21 +12,19 @@
       content="EduConnect, budget calculator, event costs, transportation, materials, estimate"
     >
     <meta name="author" content="Your Full Name">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/budget-calculator.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/budget-calculator.css">
     <title>Budget Calculator - EduConnect</title>
   </head>
 
   <body id="budgetPage">
     <!-- ========== HEADER SECTION ========== -->
-    <header id="siteHeader" class="headerBox">
-      <div id="brandSection" class="brandBox">
-        <a href="../index.html" id="homeLink" class="logoLink" title="Go to EduConnect Home">
+    <header id="siteHeader" class="header">
+      <div id="brandSection" class="brand">
+        <a href="../index.html" id="homeLink" class="logoLink" title="Go to EventsX Home">
           <img
-            src="../images/logo_image.jpeg"
-            alt="EduConnect logo"
-            width="200"
-            height="120"
+            src="images/1png.png"
+            alt="EventsX logo"
             id="logoImage"
             class="logoImg"
           >
@@ -36,7 +34,7 @@
 
       <!-- ========== MAIN NAVIGATION ========== -->
       <nav id="mainNavigation" class="navBar" aria-label="Primary">
-        <ul id="navList" class="navListBox">
+        <ul id="navList" class="navList">
           <li class="navItem"><a href="../index.html" id="navHome" class="navLink" title="Home">Home</a></li>
           <li class="navItem"><a href="about.html" id="navAbout" class="navLink" title="About EduConnect">About Us</a></li>
           <li class="navItem"><a href="events.html" id="navCourses" class="navLink" title="Browse course catalog">Course Catalog</a></li>
@@ -46,7 +44,7 @@
           <li class="navItem">
             <a
               href="https://www.gu.edu.eg/"
-              id="GalalaUniversity"
+              id="GalalaUniversityLink"
               class="navLink"
               target="_blank"
               rel="noopener noreferrer"
@@ -60,7 +58,7 @@
     <!-- ========== END HEADER ========= -->
 
     <!-- ========== BREADCRUMB ========== -->
-    <nav id="breadcrumbNav" class="breadcrumbBox" aria-label="breadcrumb">
+    <nav id="breadcrumbNav" class="breadcrumb" aria-label="breadcrumb">
       <a href="../index.html" id="breadcrumbHome" class="breadcrumbLink" title="Home">Home</a>
       <span id="breadcrumbSeparator" class="breadcrumbSep">&gt;</span>
       <span id="breadcrumbCurrent" class="breadcrumbCurrent">Budget Calculator</span>
@@ -68,8 +66,8 @@
     <!-- ========== END BREADCRUMB ========== -->
 
     <!-- ========== MAIN SECTION ========== -->
-    <main id="mainContent" class="mainBox">
-      <header id="pageHeader" class="pageHeaderBox">
+    <main id="mainContent" class="main">
+      <header id="pageHeader" class="pageHeader">
         <h2 id="pageTitle" class="pageTitleText">Budget Calculator</h2>
         <p id="pageIntro" class="paragraphText">
           Fill the fields and calculate your total manually.
@@ -167,20 +165,13 @@
         </form>
       </section>
 
-      <aside id="tipAside" class="asideBox" aria-label="Budget tip">
-        <h3 id="tipTitle" class="sectionTitle">Tip</h3>
-        <ul id="tipList" class="simpleList">
-          <li>Early bird registration for EventsX workshops usually saves 20%.</li>
-          <li>Check the Student Dashboard for group travel discounts.</li>
-          <li>Save a digital copy of this estimate for your records.</li>
-        </ul>
-      </aside>
+   
     </main>
     <!-- ========== END MAIN SECTION ========== -->
 
     <!-- ========== FOOTER SECTION ========== -->
-    <footer id="siteFooter" class="footerBox">
-      <div id="footerContent" class="footerContentBox">
+    <footer id="siteFooter" class="footer">
+      <div id="footerContent" class="footerContent">
         <section id="footerLinksSection" class="footerSection">
           <h4 id="footerLinksTitle" class="footerTitle">Links</h4>
           <ul id="footerLinksList" class="footerList">
@@ -193,11 +184,14 @@
 
         <section id="footerContactSection" class="footerSection">
           <h4 id="footerContactTitle" class="footerTitle">Contact</h4>
-          <address id="footerAddress" class="addressBox">
+          <address id="footerAddress" class="address">
             Email:
-            <a href="mailto:contact@educonnect.example" id="footerEmail" class="footerLink" title="Send us an email">
-              contact@educonnect.example
-            </a>
+            <a
+              href="mailto:contact@educonnect.example"
+              id="footerEmail"
+              class="footerLink"
+              title="Send us an email"
+            >contact@educonnect.example</a>
           </address>
         </section>
 
@@ -207,7 +201,7 @@
             <li>
               <a
                 href="https://www.linkedin.com"
-                id="socialLinkedIn"
+                id="footerLinkedIn"
                 class="footerLink"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -217,7 +211,7 @@
             <li>
               <a
                 href="https://www.facebook.com"
-                id="socialFacebook"
+                id="footerFacebook"
                 class="footerLink"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -227,7 +221,7 @@
             <li>
               <a
                 href="https://twitter.com"
-                id="socialTwitter"
+                id="footerTwitter"
                 class="footerLink"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -238,8 +232,7 @@
         </section>
       </div>
 
-      <section id="footerInfo" class="footerInfo">
-        
+      <div id="footerInfo" class="footerInfo">
         <p id="copyrightText" class="footerText">&copy; 2025 EduConnect. All rights reserved.</p>
         <p id="updatedText" class="footerText">
           Last Updated:
@@ -247,8 +240,9 @@
             December 29, 2025
           </time>
         </p>
-      </section>
+      </div>
     </footer>
     <!-- ========== END FOOTER ========= -->
+    <script src="scripts/validation.js"></script>
   </body>
 </html>

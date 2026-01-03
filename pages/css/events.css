@@ -1,0 +1,178 @@
+.main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+}
+
+#filterSection {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.form-group {
+  flex: 1; 
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.filter-form input,
+.filter-form select {
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+#filterButton {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#resetButton {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  padding: 12px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse; 
+  margin: 30px 0;
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+#tableCaption {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.table thead {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.table th, 
+.table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+.table tbody tr:hover {
+  background-color: #f1f8fa;
+}
+
+
+.table td:last-child {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+
+#notesSection {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 40px;
+}
+
+.numberList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.numberList li {
+  background-color: var(--color-bg-primary);
+  padding: 20px 20px 20px 50px; 
+  border-radius: var(--radius-md);
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+
+.numberList li::before {
+  content: "✓"; 
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.mediaSection {
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.mediaImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mediaCaption {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+  .filter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+}
